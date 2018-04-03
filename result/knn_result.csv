@@ -1,0 +1,6 @@
+Design Accuracy BRAM DSP FF LUT Latency cosim-Latency
+1-nn 100% 0 0 101 205 32 	
+2-nn 5% 97 0 322 763 993704 	
+3-nn 4.44% 97 0 344 872 1083734 	
+4-nn 4.44% 97 0 339 803 1137764 	
+5-nn 5.56% 97 0 354 882 1191794 	

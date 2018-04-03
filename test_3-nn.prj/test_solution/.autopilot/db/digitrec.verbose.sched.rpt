@@ -1,0 +1,782 @@
+
+
+================================================================
+== Vivado HLS Report for 'digitrec'
+================================================================
+* Date:           Tue Feb 20 22:55:10 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        test_3-nn.prj
+* Solution:       test_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  32487|  32487|  32487|  32487|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |             |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |     80|     80|         8|          -|          -|    10|    no    |
+        | + Loop 1.1  |      6|      6|         2|          -|          -|     3|    no    |
+        |- loop2      |  32400|  32400|        18|          -|          -|  1800|    no    |
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 27
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+	5  / (exitcond1)
+3 --> 
+	4  / (!exitcond3)
+	2  / (exitcond3)
+4 --> 
+	3  / true
+5 --> 
+	6  / (!exitcond2)
+	23  / (exitcond2)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	5  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V = alloca i6"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V = alloca i6"
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V = alloca i6"
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V = alloca i6"
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V = alloca i6"
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V = alloca i6"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V = alloca i6"
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V = alloca i6"
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V = alloca i6"
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V = alloca i6"
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V = alloca i6"
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V = alloca i6"
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V = alloca i6"
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V = alloca i6"
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V = alloca i6"
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V = alloca i6"
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V = alloca i6"
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V = alloca i6"
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V = alloca i6"
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V = alloca i6"
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V = alloca i6"
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V = alloca i6"
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V = alloca i6"
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V = alloca i6"
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V = alloca i6"
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V = alloca i6"
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V = alloca i6"
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V = alloca i6"
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V = alloca i6"
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V = alloca i6"
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4 0), !map !63"
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i49 %input_V), !map !69"
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @digitrec_str) nounwind"
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%input_V_read = call i49 @_ssdm_op_Read.ap_auto.i49(i49 %input_V)"
+ST_1 : Operation 62 [1/1] (1.76ns)   --->   "br label %1" [digitrec.cpp:21]
+
+ <State 2> : 1.92ns
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %0 ], [ %i_1, %3 ]"
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%phi_mul = phi i8 [ 0, %0 ], [ %next_mul, %3 ]"
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%phi_urem = phi i4 [ 0, %0 ], [ %idx_urem, %3 ]"
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_l = load i6* %knn_set_0_0_0_V"
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_l = load i6* %knn_set_0_0_1_V"
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_l = load i6* %knn_set_0_0_2_V"
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_l = load i6* %knn_set_0_0_3_V"
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_l = load i6* %knn_set_0_1_0_V"
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_l = load i6* %knn_set_0_1_1_V"
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_l = load i6* %knn_set_0_1_2_V"
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_l = load i6* %knn_set_0_1_3_V"
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_l = load i6* %knn_set_0_2_0_V"
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_l = load i6* %knn_set_0_2_1_V"
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_l = load i6* %knn_set_0_2_2_V"
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_l = load i6* %knn_set_0_2_3_V"
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_l = load i6* %knn_set_1_0_0_V"
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_l = load i6* %knn_set_1_0_1_V"
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_l = load i6* %knn_set_1_0_2_V"
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_l = load i6* %knn_set_1_1_0_V"
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_l = load i6* %knn_set_1_1_1_V"
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_l = load i6* %knn_set_1_1_2_V"
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_l = load i6* %knn_set_1_2_0_V"
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_l = load i6* %knn_set_1_2_1_V"
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_l = load i6* %knn_set_1_2_2_V"
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_l = load i6* %knn_set_2_0_0_V"
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_l = load i6* %knn_set_2_0_1_V"
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_l = load i6* %knn_set_2_0_2_V"
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_l = load i6* %knn_set_2_1_0_V"
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_l = load i6* %knn_set_2_1_1_V"
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_l = load i6* %knn_set_2_1_2_V"
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_l = load i6* %knn_set_2_2_0_V"
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_l = load i6* %knn_set_2_2_1_V"
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_l = load i6* %knn_set_2_2_2_V"
+ST_2 : Operation 96 [1/1] (1.91ns)   --->   "%next_mul = add i8 %phi_mul, 22"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 97 [1/1] (1.30ns)   --->   "%exitcond1 = icmp eq i4 %i, -6" [digitrec.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_2 : Operation 99 [1/1] (1.73ns)   --->   "%i_1 = add i4 %i, 1" [digitrec.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader.preheader, label %.preheader17.preheader" [digitrec.cpp:21]
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "%tmp = trunc i4 %phi_urem to i3"
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "%newIndex_t = call i2 @_ssdm_op_PartSelect.i2.i8.i32.i32(i8 %phi_mul, i32 6, i32 7)"
+ST_2 : Operation 103 [1/1] (1.76ns)   --->   "br label %.preheader17" [digitrec.cpp:22]
+ST_2 : Operation 104 [1/1] (1.76ns)   --->   "br label %.preheader" [digitrec.cpp:27]
+
+ <State 3> : 4.41ns
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%k = phi i2 [ 0, %.preheader17.preheader ], [ %k_1, %.preheader17.backedge ]"
+ST_3 : Operation 106 [1/1] (0.95ns)   --->   "%exitcond3 = icmp eq i2 %k, -1" [digitrec.cpp:22]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)"
+ST_3 : Operation 108 [1/1] (1.56ns)   --->   "%k_1 = add i2 %k, 1" [digitrec.cpp:22]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %3, label %2" [digitrec.cpp:22]
+ST_3 : Operation 110 [1/1] (1.13ns)   --->   "switch i3 %tmp, label %branch2 [
+    i3 0, label %branch0
+    i3 1, label %branch1
+  ]" [digitrec.cpp:24]
+ST_3 : Operation 111 [1/1] (1.13ns)   --->   "switch i2 %k, label %branch8 [
+    i2 0, label %branch6
+    i2 1, label %branch7
+  ]" [digitrec.cpp:24]
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_l_1 = load i6* %knn_set_1_1_0_V"
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_l_1 = load i6* %knn_set_1_1_1_V"
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_l_1 = load i6* %knn_set_1_1_2_V"
+ST_3 : Operation 115 [1/1] (1.95ns)   --->   "%knn_set_1_1_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_1_1_0_V_l_1, i6 %knn_set_1_1_0_V_l_1, i6 %knn_set_1_1_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 116 [1/1] (1.95ns)   --->   "%knn_set_1_1_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_1_1_V_l_1, i6 -14, i6 %knn_set_1_1_1_V_l_1, i6 %knn_set_1_1_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 117 [1/1] (1.95ns)   --->   "%knn_set_1_1_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_1_2_V_l_1, i6 %knn_set_1_1_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_1_2_V_5, i6* %knn_set_1_1_2_V"
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_1_1_V_5, i6* %knn_set_1_1_1_V"
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_1_0_V_5, i6* %knn_set_1_1_0_V"
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_l_1 = load i6* %knn_set_1_0_0_V"
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_l_1 = load i6* %knn_set_1_0_1_V"
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_l_1 = load i6* %knn_set_1_0_2_V"
+ST_3 : Operation 125 [1/1] (1.95ns)   --->   "%knn_set_1_0_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_1_0_0_V_l_1, i6 %knn_set_1_0_0_V_l_1, i6 %knn_set_1_0_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 126 [1/1] (1.95ns)   --->   "%knn_set_1_0_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_0_1_V_l_1, i6 -14, i6 %knn_set_1_0_1_V_l_1, i6 %knn_set_1_0_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 127 [1/1] (1.95ns)   --->   "%knn_set_1_0_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_0_2_V_l_1, i6 %knn_set_1_0_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 128 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_0_2_V_5, i6* %knn_set_1_0_2_V"
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_0_1_V_5, i6* %knn_set_1_0_1_V"
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_0_0_V_5, i6* %knn_set_1_0_0_V"
+ST_3 : Operation 131 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_l_1 = load i6* %knn_set_1_2_0_V"
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_l_1 = load i6* %knn_set_1_2_1_V"
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_l_1 = load i6* %knn_set_1_2_2_V"
+ST_3 : Operation 135 [1/1] (1.95ns)   --->   "%knn_set_1_2_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_1_2_0_V_l_1, i6 %knn_set_1_2_0_V_l_1, i6 %knn_set_1_2_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 136 [1/1] (1.95ns)   --->   "%knn_set_1_2_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_2_1_V_l_1, i6 -14, i6 %knn_set_1_2_1_V_l_1, i6 %knn_set_1_2_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 137 [1/1] (1.95ns)   --->   "%knn_set_1_2_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_1_2_2_V_l_1, i6 %knn_set_1_2_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_2_2_V_5, i6* %knn_set_1_2_2_V"
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_2_1_V_5, i6* %knn_set_1_2_1_V"
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "store i6 %knn_set_1_2_0_V_5, i6* %knn_set_1_2_0_V"
+ST_3 : Operation 141 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 142 [1/1] (1.13ns)   --->   "switch i2 %k, label %branch5 [
+    i2 0, label %branch3
+    i2 1, label %branch4
+  ]" [digitrec.cpp:24]
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_l_1 = load i6* %knn_set_0_1_0_V"
+ST_3 : Operation 144 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_l_1 = load i6* %knn_set_0_1_1_V"
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_l_1 = load i6* %knn_set_0_1_2_V"
+ST_3 : Operation 146 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_l_1 = load i6* %knn_set_0_1_3_V"
+ST_3 : Operation 147 [1/1] (1.95ns)   --->   "%knn_set_0_1_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_0_1_0_V_l_1, i6 %knn_set_0_1_0_V_l_1, i6 %knn_set_0_1_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 148 [1/1] (1.95ns)   --->   "%knn_set_0_1_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_1_1_V_l_1, i6 -14, i6 %knn_set_0_1_1_V_l_1, i6 %knn_set_0_1_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 149 [1/1] (1.95ns)   --->   "%knn_set_0_1_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_1_2_V_l_1, i6 %knn_set_0_1_2_V_l_1, i6 -14, i6 %knn_set_0_1_2_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 150 [1/1] (1.95ns)   --->   "%knn_set_0_1_3_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_1_3_V_l_1, i6 %knn_set_0_1_3_V_l_1, i6 %knn_set_0_1_3_V_l_1, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 151 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_1_3_V_5, i6* %knn_set_0_1_3_V"
+ST_3 : Operation 152 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_1_2_V_5, i6* %knn_set_0_1_2_V"
+ST_3 : Operation 153 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_1_1_V_5, i6* %knn_set_0_1_1_V"
+ST_3 : Operation 154 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_1_0_V_5, i6* %knn_set_0_1_0_V"
+ST_3 : Operation 155 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 156 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_l_1 = load i6* %knn_set_0_0_0_V"
+ST_3 : Operation 157 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_l_1 = load i6* %knn_set_0_0_1_V"
+ST_3 : Operation 158 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_l_1 = load i6* %knn_set_0_0_2_V"
+ST_3 : Operation 159 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_l_1 = load i6* %knn_set_0_0_3_V"
+ST_3 : Operation 160 [1/1] (1.95ns)   --->   "%knn_set_0_0_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_0_0_0_V_l_1, i6 %knn_set_0_0_0_V_l_1, i6 %knn_set_0_0_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 161 [1/1] (1.95ns)   --->   "%knn_set_0_0_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_0_1_V_l_1, i6 -14, i6 %knn_set_0_0_1_V_l_1, i6 %knn_set_0_0_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 162 [1/1] (1.95ns)   --->   "%knn_set_0_0_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_0_2_V_l_1, i6 %knn_set_0_0_2_V_l_1, i6 -14, i6 %knn_set_0_0_2_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 163 [1/1] (1.95ns)   --->   "%knn_set_0_0_3_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_0_3_V_l_1, i6 %knn_set_0_0_3_V_l_1, i6 %knn_set_0_0_3_V_l_1, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 164 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_0_3_V_5, i6* %knn_set_0_0_3_V"
+ST_3 : Operation 165 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_0_2_V_5, i6* %knn_set_0_0_2_V"
+ST_3 : Operation 166 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_0_1_V_5, i6* %knn_set_0_0_1_V"
+ST_3 : Operation 167 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_0_0_V_5, i6* %knn_set_0_0_0_V"
+ST_3 : Operation 168 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 169 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_l_1 = load i6* %knn_set_0_2_0_V"
+ST_3 : Operation 170 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_l_1 = load i6* %knn_set_0_2_1_V"
+ST_3 : Operation 171 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_l_1 = load i6* %knn_set_0_2_2_V"
+ST_3 : Operation 172 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_l_1 = load i6* %knn_set_0_2_3_V"
+ST_3 : Operation 173 [1/1] (1.95ns)   --->   "%knn_set_0_2_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_0_2_0_V_l_1, i6 %knn_set_0_2_0_V_l_1, i6 %knn_set_0_2_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 174 [1/1] (1.95ns)   --->   "%knn_set_0_2_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_2_1_V_l_1, i6 -14, i6 %knn_set_0_2_1_V_l_1, i6 %knn_set_0_2_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 175 [1/1] (1.95ns)   --->   "%knn_set_0_2_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_2_2_V_l_1, i6 %knn_set_0_2_2_V_l_1, i6 -14, i6 %knn_set_0_2_2_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 176 [1/1] (1.95ns)   --->   "%knn_set_0_2_3_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_0_2_3_V_l_1, i6 %knn_set_0_2_3_V_l_1, i6 %knn_set_0_2_3_V_l_1, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 177 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_2_3_V_5, i6* %knn_set_0_2_3_V"
+ST_3 : Operation 178 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_2_2_V_5, i6* %knn_set_0_2_2_V"
+ST_3 : Operation 179 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_2_1_V_5, i6* %knn_set_0_2_1_V"
+ST_3 : Operation 180 [1/1] (0.00ns)   --->   "store i6 %knn_set_0_2_0_V_5, i6* %knn_set_0_2_0_V"
+ST_3 : Operation 181 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 182 [1/1] (1.13ns)   --->   "switch i2 %k, label %branch11 [
+    i2 0, label %branch9
+    i2 1, label %branch10
+  ]" [digitrec.cpp:24]
+ST_3 : Operation 183 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_l_1 = load i6* %knn_set_2_1_0_V"
+ST_3 : Operation 184 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_l_1 = load i6* %knn_set_2_1_1_V"
+ST_3 : Operation 185 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_l_1 = load i6* %knn_set_2_1_2_V"
+ST_3 : Operation 186 [1/1] (1.95ns)   --->   "%knn_set_2_1_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_2_1_0_V_l_1, i6 %knn_set_2_1_0_V_l_1, i6 %knn_set_2_1_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 187 [1/1] (1.95ns)   --->   "%knn_set_2_1_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_1_1_V_l_1, i6 -14, i6 %knn_set_2_1_1_V_l_1, i6 %knn_set_2_1_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 188 [1/1] (1.95ns)   --->   "%knn_set_2_1_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_1_2_V_l_1, i6 %knn_set_2_1_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 189 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_1_2_V_5, i6* %knn_set_2_1_2_V"
+ST_3 : Operation 190 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_1_1_V_5, i6* %knn_set_2_1_1_V"
+ST_3 : Operation 191 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_1_0_V_5, i6* %knn_set_2_1_0_V"
+ST_3 : Operation 192 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 193 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_l_1 = load i6* %knn_set_2_0_0_V"
+ST_3 : Operation 194 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_l_1 = load i6* %knn_set_2_0_1_V"
+ST_3 : Operation 195 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_l_1 = load i6* %knn_set_2_0_2_V"
+ST_3 : Operation 196 [1/1] (1.95ns)   --->   "%knn_set_2_0_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_2_0_0_V_l_1, i6 %knn_set_2_0_0_V_l_1, i6 %knn_set_2_0_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 197 [1/1] (1.95ns)   --->   "%knn_set_2_0_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_0_1_V_l_1, i6 -14, i6 %knn_set_2_0_1_V_l_1, i6 %knn_set_2_0_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 198 [1/1] (1.95ns)   --->   "%knn_set_2_0_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_0_2_V_l_1, i6 %knn_set_2_0_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 199 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_0_2_V_5, i6* %knn_set_2_0_2_V"
+ST_3 : Operation 200 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_0_1_V_5, i6* %knn_set_2_0_1_V"
+ST_3 : Operation 201 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_0_0_V_5, i6* %knn_set_2_0_0_V"
+ST_3 : Operation 202 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 203 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_l_1 = load i6* %knn_set_2_2_0_V"
+ST_3 : Operation 204 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_l_1 = load i6* %knn_set_2_2_1_V"
+ST_3 : Operation 205 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_l_1 = load i6* %knn_set_2_2_2_V"
+ST_3 : Operation 206 [1/1] (1.95ns)   --->   "%knn_set_2_2_0_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 -14, i6 %knn_set_2_2_0_V_l_1, i6 %knn_set_2_2_0_V_l_1, i6 %knn_set_2_2_0_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 207 [1/1] (1.95ns)   --->   "%knn_set_2_2_1_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_2_1_V_l_1, i6 -14, i6 %knn_set_2_2_1_V_l_1, i6 %knn_set_2_2_1_V_l_1, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 208 [1/1] (1.95ns)   --->   "%knn_set_2_2_2_V_5 = call i6 @_ssdm_op_Mux.ap_auto.4i6.i2(i6 %knn_set_2_2_2_V_l_1, i6 %knn_set_2_2_2_V_l_1, i6 -14, i6 -14, i2 %newIndex_t)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 209 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_2_2_V_5, i6* %knn_set_2_2_2_V"
+ST_3 : Operation 210 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_2_1_V_5, i6* %knn_set_2_2_1_V"
+ST_3 : Operation 211 [1/1] (0.00ns)   --->   "store i6 %knn_set_2_2_0_V_5, i6* %knn_set_2_2_0_V"
+ST_3 : Operation 212 [1/1] (0.00ns)   --->   "br label %.preheader17.backedge" [digitrec.cpp:24]
+ST_3 : Operation 213 [1/1] (1.73ns)   --->   "%next_urem = add i4 %phi_urem, 1"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 214 [1/1] (1.30ns)   --->   "%tmp_106 = icmp ult i4 %next_urem, 3"   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 215 [1/1] (1.37ns)   --->   "%idx_urem = select i1 %tmp_106, i4 %next_urem, i4 0"   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 216 [1/1] (0.00ns)   --->   "br label %1" [digitrec.cpp:21]
+
+ <State 4> : 0.00ns
+ST_4 : Operation 217 [1/1] (0.00ns)   --->   "br label %.preheader17"
+
+ <State 5> : 8.17ns
+ST_5 : Operation 218 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_3 = phi i6 [ %knn_set_2_2_2_V_4, %4 ], [ %knn_set_2_2_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 219 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_3 = phi i6 [ %knn_set_2_2_1_V_4, %4 ], [ %knn_set_2_2_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 220 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_3 = phi i6 [ %knn_set_2_2_0_V_4, %4 ], [ %knn_set_2_2_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 221 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_3 = phi i6 [ %knn_set_2_1_2_V_4, %4 ], [ %knn_set_2_1_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 222 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_3 = phi i6 [ %knn_set_2_1_1_V_4, %4 ], [ %knn_set_2_1_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 223 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_3 = phi i6 [ %knn_set_2_1_0_V_4, %4 ], [ %knn_set_2_1_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 224 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_3 = phi i6 [ %knn_set_2_0_2_V_4, %4 ], [ %knn_set_2_0_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 225 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_3 = phi i6 [ %knn_set_2_0_1_V_4, %4 ], [ %knn_set_2_0_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 226 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_3 = phi i6 [ %knn_set_2_0_0_V_4, %4 ], [ %knn_set_2_0_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 227 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_3 = phi i6 [ %knn_set_1_2_2_V_4, %4 ], [ %knn_set_1_2_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 228 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_3 = phi i6 [ %knn_set_1_2_1_V_4, %4 ], [ %knn_set_1_2_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 229 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_3 = phi i6 [ %knn_set_1_2_0_V_4, %4 ], [ %knn_set_1_2_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 230 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_3 = phi i6 [ %knn_set_1_1_2_V_4, %4 ], [ %knn_set_1_1_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 231 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_3 = phi i6 [ %knn_set_1_1_1_V_4, %4 ], [ %knn_set_1_1_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 232 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_3 = phi i6 [ %knn_set_1_1_0_V_4, %4 ], [ %knn_set_1_1_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 233 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_3 = phi i6 [ %knn_set_1_0_2_V_4, %4 ], [ %knn_set_1_0_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 234 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_3 = phi i6 [ %knn_set_1_0_1_V_4, %4 ], [ %knn_set_1_0_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 235 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_3 = phi i6 [ %knn_set_1_0_0_V_4, %4 ], [ %knn_set_1_0_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 236 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_3 = phi i6 [ %knn_set_0_2_3_V_6, %4 ], [ %knn_set_0_2_3_V_l, %.preheader.preheader ]"
+ST_5 : Operation 237 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_3 = phi i6 [ %knn_set_0_2_2_V_6, %4 ], [ %knn_set_0_2_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 238 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_3 = phi i6 [ %knn_set_0_2_1_V_6, %4 ], [ %knn_set_0_2_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 239 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_3 = phi i6 [ %knn_set_0_2_0_V_6, %4 ], [ %knn_set_0_2_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 240 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_3 = phi i6 [ %knn_set_0_1_3_V_6, %4 ], [ %knn_set_0_1_3_V_l, %.preheader.preheader ]"
+ST_5 : Operation 241 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_3 = phi i6 [ %knn_set_0_1_2_V_6, %4 ], [ %knn_set_0_1_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 242 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_3 = phi i6 [ %knn_set_0_1_1_V_6, %4 ], [ %knn_set_0_1_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 243 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_3 = phi i6 [ %knn_set_0_1_0_V_6, %4 ], [ %knn_set_0_1_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 244 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_3 = phi i6 [ %knn_set_0_0_3_V_6, %4 ], [ %knn_set_0_0_3_V_l, %.preheader.preheader ]"
+ST_5 : Operation 245 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_3 = phi i6 [ %knn_set_0_0_2_V_6, %4 ], [ %knn_set_0_0_2_V_l, %.preheader.preheader ]"
+ST_5 : Operation 246 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_3 = phi i6 [ %knn_set_0_0_1_V_6, %4 ], [ %knn_set_0_0_1_V_l, %.preheader.preheader ]"
+ST_5 : Operation 247 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_3 = phi i6 [ %knn_set_0_0_0_V_6, %4 ], [ %knn_set_0_0_0_V_l, %.preheader.preheader ]"
+ST_5 : Operation 248 [1/1] (0.00ns)   --->   "%i4 = phi i11 [ %i_2, %4 ], [ 0, %.preheader.preheader ]"
+ST_5 : Operation 249 [1/1] (0.00ns)   --->   "%i4_cast1 = zext i11 %i4 to i15" [digitrec.cpp:27]
+ST_5 : Operation 250 [1/1] (0.00ns)   --->   "%i4_cast2 = zext i11 %i4 to i14" [digitrec.cpp:27]
+ST_5 : Operation 251 [1/1] (0.00ns)   --->   "%i4_cast225_cast1 = zext i11 %i4 to i12" [digitrec.cpp:27]
+ST_5 : Operation 252 [1/1] (0.00ns)   --->   "%i4_cast225_cast = zext i11 %i4 to i13" [digitrec.cpp:27]
+ST_5 : Operation 253 [1/1] (1.88ns)   --->   "%exitcond2 = icmp eq i11 %i4, -248" [digitrec.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 254 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1800, i64 1800, i64 1800)"
+ST_5 : Operation 255 [1/1] (1.97ns)   --->   "%i_2 = add i11 %i4, 1" [digitrec.cpp:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 256 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %5, label %4" [digitrec.cpp:27]
+ST_5 : Operation 257 [1/1] (0.00ns)   --->   "%tmp_4 = zext i11 %i4 to i64" [digitrec.cpp:33]
+ST_5 : Operation 258 [1/1] (0.00ns)   --->   "%training_data_V_addr = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4" [digitrec.cpp:33]
+ST_5 : Operation 259 [2/2] (3.25ns)   --->   "%training_data_V_load = load i48* %training_data_V_addr, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_5 : Operation 260 [1/1] (1.99ns)   --->   "%tmp_3_1 = add i12 %i4_cast225_cast1, 1800" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 261 [1/1] (0.00ns)   --->   "%tmp_4_1 = zext i12 %tmp_3_1 to i64" [digitrec.cpp:33]
+ST_5 : Operation 262 [1/1] (0.00ns)   --->   "%training_data_V_addr_1 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_1" [digitrec.cpp:33]
+ST_5 : Operation 263 [2/2] (3.25ns)   --->   "%training_data_V_load_1 = load i48* %training_data_V_addr_1, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_5 : Operation 264 [1/1] (2.01ns)   --->   "%tmp_3_2 = add i13 %i4_cast225_cast, 3600" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 265 [1/1] (0.00ns)   --->   "%tmp_4_2 = zext i13 %tmp_3_2 to i64" [digitrec.cpp:33]
+ST_5 : Operation 266 [1/1] (0.00ns)   --->   "%training_data_V_addr_2 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_2" [digitrec.cpp:33]
+ST_5 : Operation 267 [2/2] (3.25ns)   --->   "%training_data_V_load_2 = load i48* %training_data_V_addr_2, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_5 : Operation 268 [6/6] (8.16ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 6> : 3.25ns
+ST_6 : Operation 269 [1/2] (3.25ns)   --->   "%training_data_V_load = load i48* %training_data_V_addr, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_6 : Operation 270 [1/2] (3.25ns)   --->   "%training_data_V_load_1 = load i48* %training_data_V_addr_1, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_6 : Operation 271 [1/2] (3.25ns)   --->   "%training_data_V_load_2 = load i48* %training_data_V_addr_2, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 7> : 8.75ns
+ST_7 : Operation 272 [4/4] (8.75ns)   --->   "%call_ret1 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load, i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 273 [2/2] (8.75ns)   --->   "%call_ret = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_1, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 274 [2/2] (8.75ns)   --->   "%call_ret2 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_2, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 275 [1/1] (2.03ns)   --->   "%tmp_3_4 = add i14 %i4_cast2, 7200" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_4_4 = zext i14 %tmp_3_4 to i64" [digitrec.cpp:33]
+ST_7 : Operation 277 [1/1] (0.00ns)   --->   "%training_data_V_addr_4 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_4" [digitrec.cpp:33]
+ST_7 : Operation 278 [2/2] (3.25ns)   --->   "%training_data_V_load_4 = load i48* %training_data_V_addr_4, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_7 : Operation 279 [1/1] (2.03ns)   --->   "%tmp_3_5 = add i14 %i4_cast2, -7384" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 280 [1/1] (0.00ns)   --->   "%tmp_4_5 = zext i14 %tmp_3_5 to i64" [digitrec.cpp:33]
+ST_7 : Operation 281 [1/1] (0.00ns)   --->   "%training_data_V_addr_5 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_5" [digitrec.cpp:33]
+ST_7 : Operation 282 [2/2] (3.25ns)   --->   "%training_data_V_load_5 = load i48* %training_data_V_addr_5, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 8> : 8.75ns
+ST_8 : Operation 283 [3/4] (8.75ns)   --->   "%call_ret1 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load, i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 284 [1/2] (8.70ns)   --->   "%call_ret = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_1, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 285 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 0" [digitrec.cpp:35]
+ST_8 : Operation 286 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 1" [digitrec.cpp:35]
+ST_8 : Operation 287 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 2" [digitrec.cpp:35]
+ST_8 : Operation 288 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 3" [digitrec.cpp:35]
+ST_8 : Operation 289 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 4" [digitrec.cpp:35]
+ST_8 : Operation 290 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 5" [digitrec.cpp:35]
+ST_8 : Operation 291 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 6" [digitrec.cpp:35]
+ST_8 : Operation 292 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 7" [digitrec.cpp:35]
+ST_8 : Operation 293 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret, 8" [digitrec.cpp:35]
+ST_8 : Operation 294 [1/2] (8.70ns)   --->   "%call_ret2 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_2, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 295 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 0" [digitrec.cpp:35]
+ST_8 : Operation 296 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 1" [digitrec.cpp:35]
+ST_8 : Operation 297 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 2" [digitrec.cpp:35]
+ST_8 : Operation 298 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 3" [digitrec.cpp:35]
+ST_8 : Operation 299 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 4" [digitrec.cpp:35]
+ST_8 : Operation 300 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 5" [digitrec.cpp:35]
+ST_8 : Operation 301 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 6" [digitrec.cpp:35]
+ST_8 : Operation 302 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 7" [digitrec.cpp:35]
+ST_8 : Operation 303 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret2, 8" [digitrec.cpp:35]
+ST_8 : Operation 304 [1/2] (3.25ns)   --->   "%training_data_V_load_4 = load i48* %training_data_V_addr_4, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_8 : Operation 305 [1/2] (3.25ns)   --->   "%training_data_V_load_5 = load i48* %training_data_V_addr_5, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 9> : 8.75ns
+ST_9 : Operation 306 [2/4] (8.75ns)   --->   "%call_ret1 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load, i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 307 [1/1] (2.01ns)   --->   "%tmp_3_3 = add i13 %i4_cast225_cast, -2792" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 308 [1/1] (0.00ns)   --->   "%tmp_4_3 = zext i13 %tmp_3_3 to i64" [digitrec.cpp:33]
+ST_9 : Operation 309 [1/1] (0.00ns)   --->   "%training_data_V_addr_3 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_3" [digitrec.cpp:33]
+ST_9 : Operation 310 [2/2] (3.25ns)   --->   "%training_data_V_load_3 = load i48* %training_data_V_addr_3, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_9 : Operation 311 [2/2] (8.75ns)   --->   "%call_ret4 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_4, i6 %knn_set_1_0_0_V_1, i6 %knn_set_1_0_1_V_1, i6 %knn_set_1_0_2_V_1, i6 %knn_set_1_1_0_V_1, i6 %knn_set_1_1_1_V_1, i6 %knn_set_1_1_2_V_1, i6 %knn_set_1_2_0_V_1, i6 %knn_set_1_2_1_V_1, i6 %knn_set_1_2_2_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 312 [2/2] (8.75ns)   --->   "%call_ret5 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_5, i6 %knn_set_2_0_0_V_1, i6 %knn_set_2_0_1_V_1, i6 %knn_set_2_0_2_V_1, i6 %knn_set_2_1_0_V_1, i6 %knn_set_2_1_1_V_1, i6 %knn_set_2_1_2_V_1, i6 %knn_set_2_2_0_V_1, i6 %knn_set_2_2_1_V_1, i6 %knn_set_2_2_2_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 313 [1/1] (2.01ns)   --->   "%tmp_3_7 = add i13 %i4_cast225_cast, -3784" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 314 [1/1] (0.00ns)   --->   "%tmp_3_7_cast = sext i13 %tmp_3_7 to i14" [digitrec.cpp:33]
+ST_9 : Operation 315 [1/1] (0.00ns)   --->   "%tmp_4_7 = zext i14 %tmp_3_7_cast to i64" [digitrec.cpp:33]
+ST_9 : Operation 316 [1/1] (0.00ns)   --->   "%training_data_V_addr_7 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_7" [digitrec.cpp:33]
+ST_9 : Operation 317 [2/2] (3.25ns)   --->   "%training_data_V_load_7 = load i48* %training_data_V_addr_7, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_9 : Operation 318 [1/1] (1.99ns)   --->   "%tmp_3_8 = add i12 %i4_cast225_cast1, -1984" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 319 [1/1] (0.00ns)   --->   "%tmp_3_8_cast = sext i12 %tmp_3_8 to i14" [digitrec.cpp:33]
+ST_9 : Operation 320 [1/1] (0.00ns)   --->   "%tmp_4_8 = zext i14 %tmp_3_8_cast to i64" [digitrec.cpp:33]
+ST_9 : Operation 321 [1/1] (0.00ns)   --->   "%training_data_V_addr_8 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_8" [digitrec.cpp:33]
+ST_9 : Operation 322 [2/2] (3.25ns)   --->   "%training_data_V_load_8 = load i48* %training_data_V_addr_8, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 10> : 8.70ns
+ST_10 : Operation 323 [1/4] (1.37ns)   --->   "%call_ret1 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load, i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i4 0)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 324 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 0" [digitrec.cpp:35]
+ST_10 : Operation 325 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 1" [digitrec.cpp:35]
+ST_10 : Operation 326 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 2" [digitrec.cpp:35]
+ST_10 : Operation 327 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 3" [digitrec.cpp:35]
+ST_10 : Operation 328 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 4" [digitrec.cpp:35]
+ST_10 : Operation 329 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 5" [digitrec.cpp:35]
+ST_10 : Operation 330 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 6" [digitrec.cpp:35]
+ST_10 : Operation 331 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 7" [digitrec.cpp:35]
+ST_10 : Operation 332 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 8" [digitrec.cpp:35]
+ST_10 : Operation 333 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 9" [digitrec.cpp:35]
+ST_10 : Operation 334 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 10" [digitrec.cpp:35]
+ST_10 : Operation 335 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_1 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret1, 11" [digitrec.cpp:35]
+ST_10 : Operation 336 [1/2] (3.25ns)   --->   "%training_data_V_load_3 = load i48* %training_data_V_addr_3, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_10 : Operation 337 [1/2] (8.70ns)   --->   "%call_ret4 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_4, i6 %knn_set_1_0_0_V_1, i6 %knn_set_1_0_1_V_1, i6 %knn_set_1_0_2_V_1, i6 %knn_set_1_1_0_V_1, i6 %knn_set_1_1_1_V_1, i6 %knn_set_1_1_2_V_1, i6 %knn_set_1_2_0_V_1, i6 %knn_set_1_2_1_V_1, i6 %knn_set_1_2_2_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 338 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 0" [digitrec.cpp:35]
+ST_10 : Operation 339 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 1" [digitrec.cpp:35]
+ST_10 : Operation 340 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 2" [digitrec.cpp:35]
+ST_10 : Operation 341 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 3" [digitrec.cpp:35]
+ST_10 : Operation 342 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 4" [digitrec.cpp:35]
+ST_10 : Operation 343 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 5" [digitrec.cpp:35]
+ST_10 : Operation 344 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 6" [digitrec.cpp:35]
+ST_10 : Operation 345 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 7" [digitrec.cpp:35]
+ST_10 : Operation 346 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret4, 8" [digitrec.cpp:35]
+ST_10 : Operation 347 [1/2] (8.70ns)   --->   "%call_ret5 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_5, i6 %knn_set_2_0_0_V_1, i6 %knn_set_2_0_1_V_1, i6 %knn_set_2_0_2_V_1, i6 %knn_set_2_1_0_V_1, i6 %knn_set_2_1_1_V_1, i6 %knn_set_2_1_2_V_1, i6 %knn_set_2_2_0_V_1, i6 %knn_set_2_2_1_V_1, i6 %knn_set_2_2_2_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 348 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 0" [digitrec.cpp:35]
+ST_10 : Operation 349 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 1" [digitrec.cpp:35]
+ST_10 : Operation 350 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 2" [digitrec.cpp:35]
+ST_10 : Operation 351 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 3" [digitrec.cpp:35]
+ST_10 : Operation 352 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 4" [digitrec.cpp:35]
+ST_10 : Operation 353 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 5" [digitrec.cpp:35]
+ST_10 : Operation 354 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 6" [digitrec.cpp:35]
+ST_10 : Operation 355 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 7" [digitrec.cpp:35]
+ST_10 : Operation 356 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret5, 8" [digitrec.cpp:35]
+ST_10 : Operation 357 [1/2] (3.25ns)   --->   "%training_data_V_load_7 = load i48* %training_data_V_addr_7, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_10 : Operation 358 [1/2] (3.25ns)   --->   "%training_data_V_load_8 = load i48* %training_data_V_addr_8, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 11> : 8.75ns
+ST_11 : Operation 359 [4/4] (8.75ns)   --->   "%call_ret3 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_3, i6 %knn_set_0_0_0_V_1, i6 %knn_set_0_0_1_V_1, i6 %knn_set_0_0_2_V_1, i6 %knn_set_0_0_3_V_1, i6 %knn_set_0_1_0_V_1, i6 %knn_set_0_1_1_V_1, i6 %knn_set_0_1_2_V_1, i6 %knn_set_0_1_3_V_1, i6 %knn_set_0_2_0_V_1, i6 %knn_set_0_2_1_V_1, i6 %knn_set_0_2_2_V_1, i6 %knn_set_0_2_3_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 360 [2/2] (8.75ns)   --->   "%call_ret7 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_7, i6 %knn_set_1_0_0_V_2, i6 %knn_set_1_0_1_V_2, i6 %knn_set_1_0_2_V_2, i6 %knn_set_1_1_0_V_2, i6 %knn_set_1_1_1_V_2, i6 %knn_set_1_1_2_V_2, i6 %knn_set_1_2_0_V_2, i6 %knn_set_1_2_1_V_2, i6 %knn_set_1_2_2_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 361 [2/2] (8.75ns)   --->   "%call_ret8 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_8, i6 %knn_set_2_0_0_V_2, i6 %knn_set_2_0_1_V_2, i6 %knn_set_2_0_2_V_2, i6 %knn_set_2_1_0_V_2, i6 %knn_set_2_1_1_V_2, i6 %knn_set_2_1_2_V_2, i6 %knn_set_2_2_0_V_2, i6 %knn_set_2_2_1_V_2, i6 %knn_set_2_2_2_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 12> : 8.75ns
+ST_12 : Operation 362 [3/4] (8.75ns)   --->   "%call_ret3 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_3, i6 %knn_set_0_0_0_V_1, i6 %knn_set_0_0_1_V_1, i6 %knn_set_0_0_2_V_1, i6 %knn_set_0_0_3_V_1, i6 %knn_set_0_1_0_V_1, i6 %knn_set_0_1_1_V_1, i6 %knn_set_0_1_2_V_1, i6 %knn_set_0_1_3_V_1, i6 %knn_set_0_2_0_V_1, i6 %knn_set_0_2_1_V_1, i6 %knn_set_0_2_2_V_1, i6 %knn_set_0_2_3_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 363 [1/2] (8.70ns)   --->   "%call_ret7 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_7, i6 %knn_set_1_0_0_V_2, i6 %knn_set_1_0_1_V_2, i6 %knn_set_1_0_2_V_2, i6 %knn_set_1_1_0_V_2, i6 %knn_set_1_1_1_V_2, i6 %knn_set_1_1_2_V_2, i6 %knn_set_1_2_0_V_2, i6 %knn_set_1_2_1_V_2, i6 %knn_set_1_2_2_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 364 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 0" [digitrec.cpp:35]
+ST_12 : Operation 365 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 1" [digitrec.cpp:35]
+ST_12 : Operation 366 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 2" [digitrec.cpp:35]
+ST_12 : Operation 367 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 3" [digitrec.cpp:35]
+ST_12 : Operation 368 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 4" [digitrec.cpp:35]
+ST_12 : Operation 369 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 5" [digitrec.cpp:35]
+ST_12 : Operation 370 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 6" [digitrec.cpp:35]
+ST_12 : Operation 371 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 7" [digitrec.cpp:35]
+ST_12 : Operation 372 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret7, 8" [digitrec.cpp:35]
+ST_12 : Operation 373 [1/2] (8.70ns)   --->   "%call_ret8 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn.1(i49 %input_V_read, i48 %training_data_V_load_8, i6 %knn_set_2_0_0_V_2, i6 %knn_set_2_0_1_V_2, i6 %knn_set_2_0_2_V_2, i6 %knn_set_2_1_0_V_2, i6 %knn_set_2_1_1_V_2, i6 %knn_set_2_1_2_V_2, i6 %knn_set_2_2_0_V_2, i6 %knn_set_2_2_1_V_2, i6 %knn_set_2_2_2_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 374 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 0" [digitrec.cpp:35]
+ST_12 : Operation 375 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 1" [digitrec.cpp:35]
+ST_12 : Operation 376 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 2" [digitrec.cpp:35]
+ST_12 : Operation 377 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 3" [digitrec.cpp:35]
+ST_12 : Operation 378 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 4" [digitrec.cpp:35]
+ST_12 : Operation 379 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 5" [digitrec.cpp:35]
+ST_12 : Operation 380 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 6" [digitrec.cpp:35]
+ST_12 : Operation 381 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 7" [digitrec.cpp:35]
+ST_12 : Operation 382 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret8, 8" [digitrec.cpp:35]
+
+ <State 13> : 8.75ns
+ST_13 : Operation 383 [2/4] (8.75ns)   --->   "%call_ret3 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_3, i6 %knn_set_0_0_0_V_1, i6 %knn_set_0_0_1_V_1, i6 %knn_set_0_0_2_V_1, i6 %knn_set_0_0_3_V_1, i6 %knn_set_0_1_0_V_1, i6 %knn_set_0_1_1_V_1, i6 %knn_set_0_1_2_V_1, i6 %knn_set_0_1_3_V_1, i6 %knn_set_0_2_0_V_1, i6 %knn_set_0_2_1_V_1, i6 %knn_set_0_2_2_V_1, i6 %knn_set_0_2_3_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 384 [1/1] (2.03ns)   --->   "%tmp_3_6 = add i14 %i4_cast2, -5584" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 385 [1/1] (0.00ns)   --->   "%tmp_4_6 = zext i14 %tmp_3_6 to i64" [digitrec.cpp:33]
+ST_13 : Operation 386 [1/1] (0.00ns)   --->   "%training_data_V_addr_6 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_6" [digitrec.cpp:33]
+ST_13 : Operation 387 [2/2] (3.25ns)   --->   "%training_data_V_load_6 = load i48* %training_data_V_addr_6, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 14> : 3.25ns
+ST_14 : Operation 388 [1/4] (1.37ns)   --->   "%call_ret3 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_3, i6 %knn_set_0_0_0_V_1, i6 %knn_set_0_0_1_V_1, i6 %knn_set_0_0_2_V_1, i6 %knn_set_0_0_3_V_1, i6 %knn_set_0_1_0_V_1, i6 %knn_set_0_1_1_V_1, i6 %knn_set_0_1_2_V_1, i6 %knn_set_0_1_3_V_1, i6 %knn_set_0_2_0_V_1, i6 %knn_set_0_2_1_V_1, i6 %knn_set_0_2_2_V_1, i6 %knn_set_0_2_3_V_1, i4 1)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 389 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 0" [digitrec.cpp:35]
+ST_14 : Operation 390 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 1" [digitrec.cpp:35]
+ST_14 : Operation 391 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 2" [digitrec.cpp:35]
+ST_14 : Operation 392 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 3" [digitrec.cpp:35]
+ST_14 : Operation 393 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 4" [digitrec.cpp:35]
+ST_14 : Operation 394 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 5" [digitrec.cpp:35]
+ST_14 : Operation 395 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 6" [digitrec.cpp:35]
+ST_14 : Operation 396 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 7" [digitrec.cpp:35]
+ST_14 : Operation 397 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 8" [digitrec.cpp:35]
+ST_14 : Operation 398 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 9" [digitrec.cpp:35]
+ST_14 : Operation 399 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 10" [digitrec.cpp:35]
+ST_14 : Operation 400 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_2 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret3, 11" [digitrec.cpp:35]
+ST_14 : Operation 401 [1/2] (3.25ns)   --->   "%training_data_V_load_6 = load i48* %training_data_V_addr_6, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 15> : 8.75ns
+ST_15 : Operation 402 [4/4] (8.75ns)   --->   "%call_ret6 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_6, i6 %knn_set_0_0_0_V_2, i6 %knn_set_0_0_1_V_2, i6 %knn_set_0_0_2_V_2, i6 %knn_set_0_0_3_V_2, i6 %knn_set_0_1_0_V_2, i6 %knn_set_0_1_1_V_2, i6 %knn_set_0_1_2_V_2, i6 %knn_set_0_1_3_V_2, i6 %knn_set_0_2_0_V_2, i6 %knn_set_0_2_1_V_2, i6 %knn_set_0_2_2_V_2, i6 %knn_set_0_2_3_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 16> : 8.75ns
+ST_16 : Operation 403 [3/4] (8.75ns)   --->   "%call_ret6 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_6, i6 %knn_set_0_0_0_V_2, i6 %knn_set_0_0_1_V_2, i6 %knn_set_0_0_2_V_2, i6 %knn_set_0_0_3_V_2, i6 %knn_set_0_1_0_V_2, i6 %knn_set_0_1_1_V_2, i6 %knn_set_0_1_2_V_2, i6 %knn_set_0_1_3_V_2, i6 %knn_set_0_2_0_V_2, i6 %knn_set_0_2_1_V_2, i6 %knn_set_0_2_2_V_2, i6 %knn_set_0_2_3_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 17> : 8.75ns
+ST_17 : Operation 404 [2/4] (8.75ns)   --->   "%call_ret6 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_6, i6 %knn_set_0_0_0_V_2, i6 %knn_set_0_0_1_V_2, i6 %knn_set_0_0_2_V_2, i6 %knn_set_0_0_3_V_2, i6 %knn_set_0_1_0_V_2, i6 %knn_set_0_1_1_V_2, i6 %knn_set_0_1_2_V_2, i6 %knn_set_0_1_3_V_2, i6 %knn_set_0_2_0_V_2, i6 %knn_set_0_2_1_V_2, i6 %knn_set_0_2_2_V_2, i6 %knn_set_0_2_3_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 405 [1/1] (2.05ns)   --->   "%tmp_3_9 = add i15 %i4_cast1, 16200" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 406 [1/1] (0.00ns)   --->   "%tmp_4_9 = zext i15 %tmp_3_9 to i64" [digitrec.cpp:33]
+ST_17 : Operation 407 [1/1] (0.00ns)   --->   "%training_data_V_addr_9 = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_4_9" [digitrec.cpp:33]
+ST_17 : Operation 408 [2/2] (3.25ns)   --->   "%training_data_V_load_9 = load i48* %training_data_V_addr_9, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 18> : 3.25ns
+ST_18 : Operation 409 [1/4] (1.37ns)   --->   "%call_ret6 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_6, i6 %knn_set_0_0_0_V_2, i6 %knn_set_0_0_1_V_2, i6 %knn_set_0_0_2_V_2, i6 %knn_set_0_0_3_V_2, i6 %knn_set_0_1_0_V_2, i6 %knn_set_0_1_1_V_2, i6 %knn_set_0_1_2_V_2, i6 %knn_set_0_1_3_V_2, i6 %knn_set_0_2_0_V_2, i6 %knn_set_0_2_1_V_2, i6 %knn_set_0_2_2_V_2, i6 %knn_set_0_2_3_V_2, i4 2)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 410 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 0" [digitrec.cpp:35]
+ST_18 : Operation 411 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 1" [digitrec.cpp:35]
+ST_18 : Operation 412 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 2" [digitrec.cpp:35]
+ST_18 : Operation 413 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 3" [digitrec.cpp:35]
+ST_18 : Operation 414 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 4" [digitrec.cpp:35]
+ST_18 : Operation 415 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 5" [digitrec.cpp:35]
+ST_18 : Operation 416 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 6" [digitrec.cpp:35]
+ST_18 : Operation 417 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 7" [digitrec.cpp:35]
+ST_18 : Operation 418 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 8" [digitrec.cpp:35]
+ST_18 : Operation 419 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 9" [digitrec.cpp:35]
+ST_18 : Operation 420 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 10" [digitrec.cpp:35]
+ST_18 : Operation 421 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_4 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret6, 11" [digitrec.cpp:35]
+ST_18 : Operation 422 [1/2] (3.25ns)   --->   "%training_data_V_load_9 = load i48* %training_data_V_addr_9, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+
+ <State 19> : 8.75ns
+ST_19 : Operation 423 [4/4] (8.75ns)   --->   "%call_ret9 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_9, i6 %knn_set_0_0_0_V_4, i6 %knn_set_0_0_1_V_4, i6 %knn_set_0_0_2_V_4, i6 %knn_set_0_0_3_V_4, i6 %knn_set_0_1_0_V_4, i6 %knn_set_0_1_1_V_4, i6 %knn_set_0_1_2_V_4, i6 %knn_set_0_1_3_V_4, i6 %knn_set_0_2_0_V_4, i6 %knn_set_0_2_1_V_4, i6 %knn_set_0_2_2_V_4, i6 %knn_set_0_2_3_V_4, i4 3)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 20> : 8.75ns
+ST_20 : Operation 424 [3/4] (8.75ns)   --->   "%call_ret9 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_9, i6 %knn_set_0_0_0_V_4, i6 %knn_set_0_0_1_V_4, i6 %knn_set_0_0_2_V_4, i6 %knn_set_0_0_3_V_4, i6 %knn_set_0_1_0_V_4, i6 %knn_set_0_1_1_V_4, i6 %knn_set_0_1_2_V_4, i6 %knn_set_0_1_3_V_4, i6 %knn_set_0_2_0_V_4, i6 %knn_set_0_2_1_V_4, i6 %knn_set_0_2_2_V_4, i6 %knn_set_0_2_3_V_4, i4 3)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 21> : 8.75ns
+ST_21 : Operation 425 [2/4] (8.75ns)   --->   "%call_ret9 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_9, i6 %knn_set_0_0_0_V_4, i6 %knn_set_0_0_1_V_4, i6 %knn_set_0_0_2_V_4, i6 %knn_set_0_0_3_V_4, i6 %knn_set_0_1_0_V_4, i6 %knn_set_0_1_1_V_4, i6 %knn_set_0_1_2_V_4, i6 %knn_set_0_1_3_V_4, i6 %knn_set_0_2_0_V_4, i6 %knn_set_0_2_1_V_4, i6 %knn_set_0_2_2_V_4, i6 %knn_set_0_2_3_V_4, i4 3)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 22> : 1.37ns
+ST_22 : Operation 426 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str3) nounwind" [digitrec.cpp:27]
+ST_22 : Operation 427 [1/4] (1.37ns)   --->   "%call_ret9 = call fastcc { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } @update_knn(i49 %input_V_read, i48 %training_data_V_load_9, i6 %knn_set_0_0_0_V_4, i6 %knn_set_0_0_1_V_4, i6 %knn_set_0_0_2_V_4, i6 %knn_set_0_0_3_V_4, i6 %knn_set_0_1_0_V_4, i6 %knn_set_0_1_1_V_4, i6 %knn_set_0_1_2_V_4, i6 %knn_set_0_1_3_V_4, i6 %knn_set_0_2_0_V_4, i6 %knn_set_0_2_1_V_4, i6 %knn_set_0_2_2_V_4, i6 %knn_set_0_2_3_V_4, i4 3)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 428 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 0" [digitrec.cpp:35]
+ST_22 : Operation 429 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 1" [digitrec.cpp:35]
+ST_22 : Operation 430 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 2" [digitrec.cpp:35]
+ST_22 : Operation 431 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 3" [digitrec.cpp:35]
+ST_22 : Operation 432 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 4" [digitrec.cpp:35]
+ST_22 : Operation 433 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 5" [digitrec.cpp:35]
+ST_22 : Operation 434 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 6" [digitrec.cpp:35]
+ST_22 : Operation 435 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 7" [digitrec.cpp:35]
+ST_22 : Operation 436 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 8" [digitrec.cpp:35]
+ST_22 : Operation 437 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 9" [digitrec.cpp:35]
+ST_22 : Operation 438 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 10" [digitrec.cpp:35]
+ST_22 : Operation 439 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_6 = extractvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %call_ret9, 11" [digitrec.cpp:35]
+ST_22 : Operation 440 [1/1] (0.00ns)   --->   "br label %.preheader" [digitrec.cpp:27]
+
+ <State 23> : 8.17ns
+ST_23 : Operation 441 [5/6] (8.16ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 24> : 8.17ns
+ST_24 : Operation 442 [4/6] (8.16ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 25> : 8.17ns
+ST_25 : Operation 443 [3/6] (8.16ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 26> : 8.17ns
+ST_26 : Operation 444 [2/6] (8.16ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 27> : 1.37ns
+ST_27 : Operation 445 [1/6] (1.37ns)   --->   "%agg_result_V_s = call fastcc i4 @knn_vote(i6 %knn_set_0_0_0_V_3, i6 %knn_set_0_0_1_V_3, i6 %knn_set_0_0_2_V_3, i6 %knn_set_0_0_3_V_3, i6 %knn_set_0_1_0_V_3, i6 %knn_set_0_1_1_V_3, i6 %knn_set_0_1_2_V_3, i6 %knn_set_0_1_3_V_3, i6 %knn_set_0_2_0_V_3, i6 %knn_set_0_2_1_V_3, i6 %knn_set_0_2_2_V_3, i6 %knn_set_0_2_3_V_3, i6 %knn_set_1_0_0_V_3, i6 %knn_set_1_0_1_V_3, i6 %knn_set_1_0_2_V_3, i6 %knn_set_1_1_0_V_3, i6 %knn_set_1_1_1_V_3, i6 %knn_set_1_1_2_V_3, i6 %knn_set_1_2_0_V_3, i6 %knn_set_1_2_1_V_3, i6 %knn_set_1_2_2_V_3, i6 %knn_set_2_0_0_V_3, i6 %knn_set_2_0_1_V_3, i6 %knn_set_2_0_2_V_3, i6 %knn_set_2_1_0_V_3, i6 %knn_set_2_1_1_V_3, i6 %knn_set_2_1_2_V_3, i6 %knn_set_2_2_0_V_3, i6 %knn_set_2_2_1_V_3, i6 %knn_set_2_2_2_V_3)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 446 [1/1] (0.00ns)   --->   "ret i4 %agg_result_V_s" [digitrec.cpp:40]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', digitrec.cpp:21) [39]  (1.77 ns)
+
+ <State 2>: 1.92ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [40]  (0 ns)
+	'add' operation ('next_mul') [72]  (1.92 ns)
+
+ <State 3>: 4.41ns
+The critical path consists of the following:
+	'add' operation ('next_urem') [206]  (1.74 ns)
+	'icmp' operation ('tmp_106') [207]  (1.3 ns)
+	'select' operation ('idx_urem') [208]  (1.37 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 8.17ns
+The critical path consists of the following:
+	'phi' operation ('knn_set[2][2][2].V') with incoming values : ('knn_set_2_2_2_V_l') ('knn_set[2][2][2].V', digitrec.cpp:35) [213]  (0 ns)
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (8.17 ns)
+
+ <State 6>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('training_data_V_load', digitrec.cpp:33) on array 'training_data_V' [256]  (3.25 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret1', digitrec.cpp:35) to 'update_knn' [257]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret1', digitrec.cpp:35) to 'update_knn' [257]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret1', digitrec.cpp:35) to 'update_knn' [257]  (8.75 ns)
+
+ <State 10>: 8.7ns
+The critical path consists of the following:
+	'call' operation ('call_ret4', digitrec.cpp:35) to 'update_knn.1' [319]  (8.7 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret3', digitrec.cpp:35) to 'update_knn' [302]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret3', digitrec.cpp:35) to 'update_knn' [302]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret3', digitrec.cpp:35) to 'update_knn' [302]  (8.75 ns)
+
+ <State 14>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('training_data_V_load_6', digitrec.cpp:33) on array 'training_data_V' [346]  (3.25 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret6', digitrec.cpp:35) to 'update_knn' [347]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret6', digitrec.cpp:35) to 'update_knn' [347]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret6', digitrec.cpp:35) to 'update_knn' [347]  (8.75 ns)
+
+ <State 18>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('training_data_V_load_9', digitrec.cpp:33) on array 'training_data_V' [393]  (3.25 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret9', digitrec.cpp:35) to 'update_knn' [394]  (8.75 ns)
+
+ <State 20>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret9', digitrec.cpp:35) to 'update_knn' [394]  (8.75 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ret9', digitrec.cpp:35) to 'update_knn' [394]  (8.75 ns)
+
+ <State 22>: 1.37ns
+The critical path consists of the following:
+	'call' operation ('call_ret9', digitrec.cpp:35) to 'update_knn' [394]  (1.37 ns)
+
+ <State 23>: 8.17ns
+The critical path consists of the following:
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (8.17 ns)
+
+ <State 24>: 8.17ns
+The critical path consists of the following:
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (8.17 ns)
+
+ <State 25>: 8.17ns
+The critical path consists of the following:
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (8.17 ns)
+
+ <State 26>: 8.17ns
+The critical path consists of the following:
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (8.17 ns)
+
+ <State 27>: 1.37ns
+The critical path consists of the following:
+	'call' operation ('agg_result_V_s', digitrec.cpp:40) to 'knn_vote' [409]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

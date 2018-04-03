@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[SIM 211-2]" severity="INFO" keynum="SIM_2_1569" content="*************** CSIM start ***************" tag=""/>
+	<Message prefix="[SIM 211-4]" severity="INFO" keynum="SIM_4_1577" content="CSIM will launch GCC as the compiler." tag=""/>
+	<Message prefix="[SIM 211-1]" severity="INFO" keynum="SIM_1_1586" content="CSim done with 0 errors." tag=""/>
+	<Message prefix="[SIM 211-3]" severity="INFO" keynum="SIM_3_1588" content="*************** CSIM finish ***************" tag=""/>
+</Messages>

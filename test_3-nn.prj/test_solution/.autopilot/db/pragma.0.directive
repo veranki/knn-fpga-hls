@@ -1,0 +1,24 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="digitrec" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="knn_set"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="3"/>
+<option name="dim" value="0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="digitrec" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="digitrec" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="update_knn" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="knn_vote" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'update_knn.1' to 'update_knn_1'." projectName="test_3-nn.prj" solutionName="test_solution" date="2018-02-21T03:55:05.888+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Pipeline directive for loop 'loop2_1' (digitrec.cpp:29) in function 'digitrec' has been removed because the loop is unrolled completely." projectName="test_3-nn.prj" solutionName="test_solution" date="2018-02-21T03:55:02.418+0000" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] digitrec.cpp:64: variable-indexed range selection may cause suboptimal QoR." projectName="test_3-nn.prj" solutionName="test_solution" date="2018-02-21T03:55:02.132+0000" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

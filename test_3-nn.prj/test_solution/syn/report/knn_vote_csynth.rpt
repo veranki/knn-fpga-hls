@@ -1,0 +1,247 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_vote'
+================================================================
+* Date:           Tue Feb 20 22:55:17 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        test_3-nn.prj
+* Solution:       test_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.17|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    4|    4|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    541|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        0|      -|     560|    128|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     560|    669|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |      1|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |sum_distances_0_2_fu_292_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_1_2_fu_334_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_2_2_fu_368_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_3_2_fu_396_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_4_2_fu_424_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_5_2_fu_452_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_6_2_fu_480_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_7_2_fu_508_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_8_2_fu_536_p2      |     +    |      0|  0|  15|           8|           8|
+    |sum_distances_9_2_fu_564_p2      |     +    |      0|  0|  15|           8|           8|
+    |tmp30_fu_282_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp31_fu_324_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp32_fu_358_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp33_fu_386_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp34_fu_414_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp35_fu_442_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp36_fu_470_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp37_fu_498_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp38_fu_526_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp39_fu_554_p2                  |     +    |      0|  0|  15|           7|           7|
+    |tmp_8_1_fu_340_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_2_fu_575_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_3_fu_587_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_4_fu_624_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_5_fu_634_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_6_fu_646_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_7_fu_681_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_8_fu_693_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_9_fu_705_p2                |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_fu_298_p2                  |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_10_fu_740_p2                 |    or    |      0|  0|   8|           1|           1|
+    |tmp_4_fu_718_p2                  |    or    |      0|  0|   8|           1|           1|
+    |tmp_6_fu_610_p2                  |    or    |      0|  0|   8|           1|           1|
+    |tmp_s_fu_662_p2                  |    or    |      0|  0|   8|           1|           1|
+    |ap_return                        |  select  |      0|  0|   4|           1|           4|
+    |sum_distances_1_min_1_fu_570_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_2_fu_580_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_3_fu_592_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_4_fu_628_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_5_fu_639_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_6_fu_676_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_7_fu_686_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_8_fu_698_p3  |  select  |      0|  0|   8|           1|           8|
+    |sum_distances_1_min_s_fu_304_p3  |  select  |      0|  0|   8|           1|           8|
+    |tmp_1_fu_733_p3                  |  select  |      0|  0|   5|           1|           4|
+    |tmp_2_fu_668_p3                  |  select  |      0|  0|   3|           1|           3|
+    |tmp_3_cast_cast_fu_710_p3        |  select  |      0|  0|   3|           1|           2|
+    |tmp_3_fu_723_p3                  |  select  |      0|  0|   3|           1|           3|
+    |tmp_5_fu_602_p3                  |  select  |      0|  0|   3|           1|           2|
+    |tmp_7_fu_616_p3                  |  select  |      0|  0|   2|           1|           2|
+    |tmp_9_fu_654_p3                  |  select  |      0|  0|   4|           1|           3|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0| 541|         251|         329|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +--------------------------------------------+----+----+-----+-----------+
+    |                    Name                    | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------+----+----+-----+-----------+
+    |ap_reg_pp0_iter1_sum_distances_4_2_reg_780  |   8|   0|    8|          0|
+    |ap_reg_pp0_iter1_sum_distances_5_2_reg_786  |   8|   0|    8|          0|
+    |knn_set_0_0_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_0_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_0_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_0_3_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_1_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_1_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_1_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_1_3_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_2_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_2_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_2_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_0_2_3_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_0_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_0_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_0_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_1_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_1_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_1_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_2_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_2_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_1_2_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_0_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_0_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_0_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_1_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_1_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_1_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_2_0_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_2_1_V_r_int_reg                   |   6|   0|    6|          0|
+    |knn_set_2_2_2_V_r_int_reg                   |   6|   0|    6|          0|
+    |sum_distances_1_2_reg_757                   |   8|   0|    8|          0|
+    |sum_distances_1_min_3_reg_815               |   8|   0|    8|          0|
+    |sum_distances_1_min_5_reg_826               |   8|   0|    8|          0|
+    |sum_distances_1_min_s_reg_752               |   8|   0|    8|          0|
+    |sum_distances_2_2_reg_768                   |   8|   0|    8|          0|
+    |sum_distances_3_2_reg_774                   |   8|   0|    8|          0|
+    |sum_distances_4_2_reg_780                   |   8|   0|    8|          0|
+    |sum_distances_5_2_reg_786                   |   8|   0|    8|          0|
+    |sum_distances_6_2_reg_792                   |   8|   0|    8|          0|
+    |sum_distances_7_2_reg_798                   |   8|   0|    8|          0|
+    |sum_distances_8_2_reg_804                   |   8|   0|    8|          0|
+    |sum_distances_9_2_reg_810                   |   8|   0|    8|          0|
+    |tmp_2_reg_837                               |   3|   0|    3|          0|
+    |tmp_3_reg_853                               |   3|   0|    3|          0|
+    |tmp_7_reg_821                               |   2|   0|    2|          0|
+    |tmp_8_1_reg_762                             |   1|   0|    1|          0|
+    |tmp_8_6_reg_831                             |   1|   0|    1|          0|
+    |tmp_8_8_reg_842                             |   1|   0|    1|          0|
+    |tmp_8_9_reg_847                             |   1|   0|    1|          0|
+    |sum_distances_6_2_reg_792                   |  64|  32|    8|          0|
+    |sum_distances_7_2_reg_798                   |  64|  32|    8|          0|
+    |sum_distances_8_2_reg_804                   |  64|  32|    8|          0|
+    |sum_distances_9_2_reg_810                   |  64|  32|    8|          0|
+    +--------------------------------------------+----+----+-----+-----------+
+    |Total                                       | 560| 128|  336|          0|
+    +--------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+-------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++-------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs |      knn_vote     | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs |      knn_vote     | return value |
+|ap_return          | out |    4| ap_ctrl_hs |      knn_vote     | return value |
+|knn_set_0_0_0_V_r  |  in |    6|   ap_none  | knn_set_0_0_0_V_r |    scalar    |
+|knn_set_0_0_1_V_r  |  in |    6|   ap_none  | knn_set_0_0_1_V_r |    scalar    |
+|knn_set_0_0_2_V_r  |  in |    6|   ap_none  | knn_set_0_0_2_V_r |    scalar    |
+|knn_set_0_0_3_V_r  |  in |    6|   ap_none  | knn_set_0_0_3_V_r |    scalar    |
+|knn_set_0_1_0_V_r  |  in |    6|   ap_none  | knn_set_0_1_0_V_r |    scalar    |
+|knn_set_0_1_1_V_r  |  in |    6|   ap_none  | knn_set_0_1_1_V_r |    scalar    |
+|knn_set_0_1_2_V_r  |  in |    6|   ap_none  | knn_set_0_1_2_V_r |    scalar    |
+|knn_set_0_1_3_V_r  |  in |    6|   ap_none  | knn_set_0_1_3_V_r |    scalar    |
+|knn_set_0_2_0_V_r  |  in |    6|   ap_none  | knn_set_0_2_0_V_r |    scalar    |
+|knn_set_0_2_1_V_r  |  in |    6|   ap_none  | knn_set_0_2_1_V_r |    scalar    |
+|knn_set_0_2_2_V_r  |  in |    6|   ap_none  | knn_set_0_2_2_V_r |    scalar    |
+|knn_set_0_2_3_V_r  |  in |    6|   ap_none  | knn_set_0_2_3_V_r |    scalar    |
+|knn_set_1_0_0_V_r  |  in |    6|   ap_none  | knn_set_1_0_0_V_r |    scalar    |
+|knn_set_1_0_1_V_r  |  in |    6|   ap_none  | knn_set_1_0_1_V_r |    scalar    |
+|knn_set_1_0_2_V_r  |  in |    6|   ap_none  | knn_set_1_0_2_V_r |    scalar    |
+|knn_set_1_1_0_V_r  |  in |    6|   ap_none  | knn_set_1_1_0_V_r |    scalar    |
+|knn_set_1_1_1_V_r  |  in |    6|   ap_none  | knn_set_1_1_1_V_r |    scalar    |
+|knn_set_1_1_2_V_r  |  in |    6|   ap_none  | knn_set_1_1_2_V_r |    scalar    |
+|knn_set_1_2_0_V_r  |  in |    6|   ap_none  | knn_set_1_2_0_V_r |    scalar    |
+|knn_set_1_2_1_V_r  |  in |    6|   ap_none  | knn_set_1_2_1_V_r |    scalar    |
+|knn_set_1_2_2_V_r  |  in |    6|   ap_none  | knn_set_1_2_2_V_r |    scalar    |
+|knn_set_2_0_0_V_r  |  in |    6|   ap_none  | knn_set_2_0_0_V_r |    scalar    |
+|knn_set_2_0_1_V_r  |  in |    6|   ap_none  | knn_set_2_0_1_V_r |    scalar    |
+|knn_set_2_0_2_V_r  |  in |    6|   ap_none  | knn_set_2_0_2_V_r |    scalar    |
+|knn_set_2_1_0_V_r  |  in |    6|   ap_none  | knn_set_2_1_0_V_r |    scalar    |
+|knn_set_2_1_1_V_r  |  in |    6|   ap_none  | knn_set_2_1_1_V_r |    scalar    |
+|knn_set_2_1_2_V_r  |  in |    6|   ap_none  | knn_set_2_1_2_V_r |    scalar    |
+|knn_set_2_2_0_V_r  |  in |    6|   ap_none  | knn_set_2_2_0_V_r |    scalar    |
+|knn_set_2_2_1_V_r  |  in |    6|   ap_none  | knn_set_2_2_1_V_r |    scalar    |
+|knn_set_2_2_2_V_r  |  in |    6|   ap_none  | knn_set_2_2_2_V_r |    scalar    |
++-------------------+-----+-----+------------+-------------------+--------------+
+

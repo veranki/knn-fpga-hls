@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vivado HLS Report for 'update_knn'
+================================================================
+* Date:           Tue Feb 20 21:14:27 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        3-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.71|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   57|   57|   57|   57|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   49|   49|         1|          -|          -|    49|    no    |
+        |- Loop 2  |    6|    6|         3|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    182|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    105|
+|Register         |        -|      -|      97|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      97|    287|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |dist_V_fu_181_p2    |     +    |      0|  0|  15|           6|           6|
+    |grp_fu_120_p2       |     +    |      0|  0|  10|           2|           2|
+    |i_fu_164_p2         |     +    |      0|  0|  15|           6|           1|
+    |tmp_2_fu_202_p2     |     +    |      0|  0|  15|           6|           6|
+    |tmp_3_fu_226_p2     |     +    |      0|  0|  15|           6|           6|
+    |tmp_1_fu_138_p2     |     -    |      0|  0|  15|           6|           6|
+    |exitcond_fu_158_p2  |   icmp   |      0|  0|  11|           6|           5|
+    |tmp_4_fu_192_p2     |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_6_fu_216_p2     |   icmp   |      0|  0|  11|           6|           6|
+    |tmp_9_fu_241_p2     |   icmp   |      0|  0|  11|           6|           6|
+    |r_V_fu_148_p2       |    xor   |      0|  0|  56|          49|          49|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0| 182|         101|          94|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  33|          6|    1|          6|
+    |bvh_d_index_reg_97           |   9|          2|    6|         12|
+    |i1_reg_108                   |   9|          2|    2|          4|
+    |min_distance_last_el_reg_86  |   9|          2|    6|         12|
+    |min_distances_V_address0     |  21|          4|    5|         20|
+    |min_distances_V_d0           |  15|          3|    6|         18|
+    |temp_min_distance_la_fu_40   |   9|          2|    6|         12|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 105|         21|   32|         84|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                       |   5|   0|    5|          0|
+    |bvh_d_index_reg_97              |   6|   0|    6|          0|
+    |i1_reg_108                      |   2|   0|    2|          0|
+    |min_distance_last_el_1_reg_285  |   6|   0|    6|          0|
+    |min_distance_last_el_reg_86     |   6|   0|    6|          0|
+    |min_distances_V_addr_1_reg_295  |   5|   0|    5|          0|
+    |min_distances_V_addr_reg_280    |   5|   0|    5|          0|
+    |r_V_reg_252                     |  49|   0|   49|          0|
+    |temp_min_distance_la_fu_40      |   6|   0|    6|          0|
+    |tmp_1_reg_246                   |   6|   0|    6|          0|
+    |tmp_6_reg_291                   |   1|   0|    1|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           |  97|   0|   97|          0|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                    |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_rst                    |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_start                  |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_done                   | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_idle                   | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_ready                  | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|test_inst_V               |  in |   49|   ap_none  |       test_inst_V      |    scalar    |
+|train_inst_V              |  in |   48|   ap_none  |      train_inst_V      |    scalar    |
+|min_distances_V_address0  | out |    5|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_ce0       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_we0       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_d0        | out |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_q0        |  in |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_address1  | out |    5|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_ce1       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_we1       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_d1        | out |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_offset    |  in |    4|   ap_none  | min_distances_V_offset |    scalar    |
++--------------------------+-----+-----+------------+------------------------+--------------+
+

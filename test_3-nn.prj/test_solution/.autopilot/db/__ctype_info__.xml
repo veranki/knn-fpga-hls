@@ -1,0 +1,23 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>input_V</name>
+<CType>
+<TypeName>ap_uint 49</TypeName>
+<TypeWidth>49</TypeWidth>
+<PhysicalWidth>49</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>ap_return</name>
+<CType>
+<TypeName>ap_uint 4</TypeName>
+<TypeWidth>4</TypeWidth>
+<PhysicalWidth>4</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

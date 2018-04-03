@@ -1,0 +1,5 @@
+digitrec_trainingbkb
+digitrec_knn_set_V
+update_knn
+knn_vote
+digitrec

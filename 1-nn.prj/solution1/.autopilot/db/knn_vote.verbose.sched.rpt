@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_vote'
+================================================================
+* Date:           Tue Feb 20 21:12:07 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        1-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.17|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   21|   21|   21|   21|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   20|   20|         2|          -|          -|    10|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond7)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 4 [1/1] (1.76ns)   --->   "br label %1" [digitrec.cpp:121]
+
+ <State 2> : 2.32ns
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%min_sum_distances = phi i32 [ 50, %0 ], [ %sum_distances_1_min_s, %.preheader.preheader ]" [digitrec.cpp:125]
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%val_assign = phi i32 [ undef, %0 ], [ %i_0_digit_recognized, %.preheader.preheader ]" [digitrec.cpp:125]
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%digit_recognized = phi i4 [ 0, %0 ], [ %i, %.preheader.preheader ]"
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%digit_recognized_cas = zext i4 %digit_recognized to i32" [digitrec.cpp:127]
+ST_2 : Operation 9 [1/1] (1.30ns)   --->   "%exitcond7 = icmp eq i4 %digit_recognized, -6" [digitrec.cpp:121]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_2 : Operation 11 [1/1] (1.73ns)   --->   "%i = add i4 %digit_recognized, 1" [digitrec.cpp:121]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "br i1 %exitcond7, label %2, label %.preheader.preheader" [digitrec.cpp:121]
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%tmp_s = zext i4 %digit_recognized to i64" [digitrec.cpp:123]
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%knn_set_0_V_addr = getelementptr [10 x i5]* %knn_set_0_V, i64 0, i64 %tmp_s" [digitrec.cpp:123]
+ST_2 : Operation 15 [2/2] (2.32ns)   --->   "%knn_set_0_V_load = load i5* %knn_set_0_V_addr, align 1" [digitrec.cpp:123]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 5> <Depth = 10> <RAM>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp = trunc i32 %val_assign to i4" [digitrec.cpp:131]
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "ret i4 %tmp" [digitrec.cpp:131]
+
+ <State 3> : 6.17ns
+ST_3 : Operation 18 [1/2] (2.32ns)   --->   "%knn_set_0_V_load = load i5* %knn_set_0_V_addr, align 1" [digitrec.cpp:123]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 5> <Depth = 10> <RAM>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%extLd = sext i5 %knn_set_0_V_load to i6" [digitrec.cpp:123]
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_3 = zext i6 %extLd to i32" [digitrec.cpp:123]
+ST_3 : Operation 21 [1/1] (2.47ns)   --->   "%tmp_1 = icmp slt i32 %tmp_3, %min_sum_distances" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 22 [1/1] (1.37ns)   --->   "%sum_distances_1_min_s = select i1 %tmp_1, i32 %tmp_3, i32 %min_sum_distances" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (1.37ns)   --->   "%i_0_digit_recognized = select i1 %tmp_1, i32 %digit_recognized_cas, i32 %val_assign" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "br label %1" [digitrec.cpp:121]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('min_sum_distances', digitrec.cpp:125) with incoming values : ('sum_distances_1_min_s', digitrec.cpp:125) [4]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', digitrec.cpp:121) [6]  (0 ns)
+	'getelementptr' operation ('knn_set_0_V_addr', digitrec.cpp:123) [14]  (0 ns)
+	'load' operation ('knn_set_0_V_load', digitrec.cpp:123) on array 'knn_set_0_V' [15]  (2.32 ns)
+
+ <State 3>: 6.17ns
+The critical path consists of the following:
+	'load' operation ('knn_set_0_V_load', digitrec.cpp:123) on array 'knn_set_0_V' [15]  (2.32 ns)
+	'icmp' operation ('tmp_1', digitrec.cpp:125) [18]  (2.47 ns)
+	'select' operation ('i_0_digit_recognized', digitrec.cpp:125) [20]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

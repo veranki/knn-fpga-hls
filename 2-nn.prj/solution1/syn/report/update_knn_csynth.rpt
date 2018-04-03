@@ -1,0 +1,156 @@
+
+
+================================================================
+== Vivado HLS Report for 'update_knn'
+================================================================
+* Date:           Tue Feb 20 21:13:16 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        2-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.64|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   52|   52|   52|   52|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   49|   49|         1|          -|          -|    49|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    131|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     75|
+|Register         |        -|      -|      80|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      80|    206|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |dist_V_fu_167_p2    |     +    |      0|  0|  15|           6|           6|
+    |i_fu_150_p2         |     +    |      0|  0|  15|           6|           1|
+    |exitcond_fu_144_p2  |   icmp   |      0|  0|  11|           6|           5|
+    |tmp_6_fu_173_p2     |   icmp   |      0|  0|  11|           6|           6|
+    |tmp_9_fu_179_p2     |   icmp   |      0|  0|  11|           6|           6|
+    |tmp_2_fu_115_p2     |    or    |      0|  0|  12|           5|           1|
+    |r_V_fu_134_p2       |    xor   |      0|  0|  56|          49|          49|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0| 131|          84|          74|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  27|          5|    1|          5|
+    |bvh_d_index_reg_91           |   9|          2|    6|         12|
+    |min_distance_last_el_reg_78  |   9|          2|    6|         12|
+    |min_distances_V_address0     |  15|          3|    5|         15|
+    |min_distances_V_d0           |  15|          3|    6|         18|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        |  75|         15|   24|         62|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                       |   4|   0|    4|          0|
+    |bvh_d_index_reg_91              |   6|   0|    6|          0|
+    |min_distance_last_el_reg_78     |   6|   0|    6|          0|
+    |min_distances_V_addr_1_reg_189  |   4|   0|    5|          1|
+    |min_distances_V_addr_reg_184    |   4|   0|    5|          1|
+    |min_distances_V_load_reg_213    |   6|   0|    6|          0|
+    |r_V_reg_195                     |  49|   0|   49|          0|
+    |tmp_6_reg_219                   |   1|   0|    1|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           |  80|   0|   82|          2|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                    |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_rst                    |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_start                  |  in |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_done                   | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_idle                   | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|ap_ready                  | out |    1| ap_ctrl_hs |       update_knn       | return value |
+|test_inst_V               |  in |   49|   ap_none  |       test_inst_V      |    scalar    |
+|train_inst_V              |  in |   48|   ap_none  |      train_inst_V      |    scalar    |
+|min_distances_V_address0  | out |    5|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_ce0       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_we0       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_d0        | out |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_q0        |  in |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_address1  | out |    5|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_ce1       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_we1       | out |    1|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_d1        | out |    6|  ap_memory |     min_distances_V    |     array    |
+|min_distances_V_offset    |  in |    4|   ap_none  | min_distances_V_offset |    scalar    |
++--------------------------+-----+-----+------------+------------------------+--------------+
+

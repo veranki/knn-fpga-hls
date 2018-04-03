@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="digitrec.cpp" path="/mnt/f/dev/522r/522r_asst4/digitrec.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="digitrec_test.cpp" path="/mnt/f/dev/522r/522r_asst4/digitrec_test.cpp"/>
+    <originFiles name="data" path="/mnt/f/dev/522r/522r_asst4/data"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

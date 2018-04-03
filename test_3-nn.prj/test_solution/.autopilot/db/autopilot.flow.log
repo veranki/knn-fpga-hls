@@ -1,0 +1,1276 @@
+INFO: [HLS 200-0] Workspace /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution opened at Tue Feb 20 22:54:15 STD 2018
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Command     config_clock returned 0; 0 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq 
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.02 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.02 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+Command       ap_source returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Command     import_lib returned 0; 0.06 sec.
+Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.02 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source returned 0; 0.04 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source returned 0; 0.16 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.26 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.27 sec.
+Command     ap_source returned 0; 0.27 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command       ap_source returned 0; 0.01 sec.
+Command     import_lib returned 0; 0.05 sec.
+Execute     source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       ap_source returned 0; 0 sec.
+Command     ap_source returned 0; 0 sec.
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart returned 1; 0.01 sec.
+Execute         open_platform DefaultPlatform 
+Command         open_platform returned 0; 0 sec.
+Execute         import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           get_default_platform 
+Command           get_default_platform returned 0; 0 sec.
+Execute           config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command           config_chip_info returned 0; 0 sec.
+Execute           config_chip_info -quiet -speed medium 
+Command           config_chip_info returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
+Command         import_lib returned 0; 0.04 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute                 source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command                 ap_source returned 0; 0.01 sec.
+Execute                 source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command                 ap_source returned 0; 0.02 sec.
+Command               ap_source returned 0; 0.03 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command               ap_source returned 0; 0.02 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command               ap_source returned 0; 0.09 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.15 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.16 sec.
+Command         ap_source returned 0; 0.16 sec.
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command         config_chip_info returned 0; 0 sec.
+Execute         config_chip_info -quiet -speed slow 
+Command         config_chip_info returned 0; 0 sec.
+Command       add_library returned 0; 0.23 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         open_platform DefaultPlatform 
+Command         open_platform returned 0; 0 sec.
+Execute         import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command                 ap_source returned 0; 0 sec.
+Execute                 source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command                 ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         import_lib returned 0; 0.04 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.01 sec.
+Command       add_library returned 0; 0.05 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     set_part returned 0; 0.31 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command     config_chip_info returned 0; 0 sec.
+Execute     config_chip_info -quiet -speed slow 
+Command     config_chip_info returned 0; 0 sec.
+Command   open_solution returned 0; 0.72 sec.
+Execute   set_part xc7z020clg484-1 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       open_platform DefaultPlatform 
+Command       open_platform returned 0; 0 sec.
+Execute       import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.02 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+Command         ap_source returned 0; 0 sec.
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command         config_chip_info returned 0; 0 sec.
+Execute         config_chip_info -quiet -speed medium 
+Command         config_chip_info returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.01 sec.
+Command       import_lib returned 0; 0.05 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.02 sec.
+Command             ap_source returned 0; 0.03 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.11 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.2 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.2 sec.
+Command       ap_source returned 0; 0.2 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed slow 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0.26 sec.
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       open_platform DefaultPlatform 
+Command       open_platform returned 0; 0 sec.
+Execute       import_lib /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.01 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command               ap_source returned 0; 0 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.02 sec.
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command         ap_source returned 0; 0 sec.
+Command       import_lib returned 0; 0.04 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Command     add_library returned 0; 0.05 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Command   set_part returned 0; 0.35 sec.
+Execute   create_clock -period 10 -name default 
+Command   create_clock returned 0; 0.01 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file 'digitrec.cpp' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling digitrec.cpp as C++
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted digitrec.cpp 
+Command       is_encrypted returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "digitrec.cpp"   -DK_CONST=3  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E digitrec.cpp -DK_CONST=3 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp
+Command       clang returned 0; 1.98 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -DK_CONST=3  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp"  -o "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -DK_CONST=3 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/useless.bc
+Command       clang returned 0; 4.37 sec.
+INFO: [HLS 200-0] GCC PP time: 6 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp"  -m "digitrec" -o "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp.ap-cdt.cpp" --pp --directive /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/test_solution.directive --source /mnt/f/dev/522r/522r_asst4/digitrec.cpp --error /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Double_Pump_Mac16 DSP_Double_Pump_Mac8 DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db --ca --es --gf --pd --p2d /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db --sd --scff /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+Command       cdt returned 0; 12.65 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pp.0.cpp.ap-cdt.cpp /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.0.cpp /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.1.cpp"   -DK_CONST=3  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.1.cpp -DK_CONST=3 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.2.cpp
+Command       clang returned 0; 1.36 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.2.cpp"  -DK_CONST=3  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.pragma.2.cpp -DK_CONST=3 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.g.bc
+Command       clang returned 0; 3.13 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/ve_warning.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:38 ; elapsed = 00:00:27 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7817 ; free virtual = 23205
+INFO: [HLS 200-0] Linking Release ...
+Execute       llvm-ld /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.bc -hls-opt -except-internalize digitrec -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o 
+Command       llvm-ld returned 0; 0.96 sec.
+Execute       disassemble /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o 
+Execute         is_encrypted /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.bc 
+Command         is_encrypted returned 0; 0 sec.
+Command       disassemble returned 0; 0.87 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+Execute       llvm-ld /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.g.bc -hls-opt -except-internalize digitrec -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g 
+Command       llvm-ld returned 0; 0.95 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:40 ; elapsed = 00:00:30 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7825 ; free virtual = 23213
+Execute       ::config_rtl 
+Command       config_rtl returned 0; 0.01 sec.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 -VP9_rom_infer_simplify=0 
+Execute         cleanup_all_models 
+Command         cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.pp.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.pp.0.bc -f 
+Command         transform returned 0; 0.2 sec.
+Execute         llvm-ld /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2017.4/lnx64/lib -lfloatconversion -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.0 
+Command         llvm-ld returned 0; 0.91 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top digitrec -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.0.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform returned 0; 15.42 sec.
+Execute         disassemble /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1 /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1 
+Execute           is_encrypted /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.79 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:00:47 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7662 ; free virtual = 23050
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform returned 0; 0.22 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+Execute         transform -syn-check /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.2.prechk.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] digitrec.cpp:64: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command         transform returned 0; 0.07 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:55 ; elapsed = 00:00:48 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7672 ; free virtual = 23060
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.g.1.bc to /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+Execute         transform -hls -tmp /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.1.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'knn_vote' (digitrec.cpp:113).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_knn' (digitrec.cpp:56).
+INFO: [XFORM 203-501] Unrolling loop 'loop2_1' (digitrec.cpp:29) in function 'digitrec' completely.
+WARNING: [XFORM 203-505] Pipeline directive for loop 'loop2_1' (digitrec.cpp:29) in function 'digitrec' has been removed because the loop is unrolled completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (digitrec.cpp:121) in function 'knn_vote' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (digitrec.cpp:122) in function 'knn_vote' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (digitrec.cpp:63) in function 'update_knn' completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.V' (digitrec.cpp:17) in dimension 1 with a cyclic factor 3.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.V.0' (digitrec.cpp:17) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.V.1' (digitrec.cpp:17) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.V.2' (digitrec.cpp:17) in dimension 2 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[0][0].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[0][1].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[0][2].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[1][0].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[1][1].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[1][2].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[2][0].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[2][1].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'knn_set[2][2].V' (digitrec.cpp:17) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[0][0].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[0][1].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[0][2].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[1][0].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[1][1].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[1][2].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[2][0].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[2][1].V' (digitrec.cpp:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set[2][2].V' (digitrec.cpp:17) in dimension 1 completely.
+Command         transform returned 0; 0.62 sec.
+INFO: [HLS 200-0] Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.1.tmp.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'update_knn.1' (digitrec.cpp:57:3)...95 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'update_knn' (digitrec.cpp:57:3)...95 expression(s) balanced.
+Command         transform returned 0; 0.55 sec.
+Execute         disassemble /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.2 /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.2 
+Execute           is_encrypted /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.2.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.72 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:57 ; elapsed = 00:00:50 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7656 ; free virtual = 23044
+INFO: [HLS 200-0] Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.2.bc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform returned 0; 0.96 sec.
+Execute         disassemble /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.3 /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.3 
+Execute           is_encrypted /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.o.3.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.7 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:51 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7636 ; free virtual = 23024
+INFO: [HLS 200-0] Finish building internal data model.
+Command       opt_and_import_c returned 0; 21.36 sec.
+Command     elaborate returned 0; 49.34 sec.
+Execute     autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'digitrec' ...
+Execute       ap_set_top_model digitrec 
+WARNING: [SYN 201-103] Legalizing function name 'update_knn.1' to 'update_knn_1'.
+Command       ap_set_top_model returned 0; 0.01 sec.
+Execute       get_model_list digitrec -filter all-wo-channel -topdown 
+Command       get_model_list returned 0; 0 sec.
+Execute       preproc_iomode -model digitrec 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model knn_vote 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model update_knn.1 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model update_knn 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       get_model_list digitrec -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: update_knn update_knn.1 knn_vote digitrec
+INFO: [HLS 200-0] Configuring Module : update_knn ...
+Execute       set_default_model update_knn 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit update_knn 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : update_knn.1 ...
+Execute       set_default_model update_knn.1 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit update_knn.1 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : knn_vote ...
+Execute       set_default_model knn_vote 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit knn_vote 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : digitrec ...
+Execute       set_default_model digitrec 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit digitrec 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for preprocess: update_knn update_knn.1 knn_vote digitrec
+INFO: [HLS 200-0] Preprocessing Module: update_knn ...
+Execute       set_default_model update_knn 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model update_knn 
+Command       cdfg_preprocess returned 0; 0.01 sec.
+Execute       rtl_gen_preprocess update_knn 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: update_knn.1 ...
+Execute       set_default_model update_knn.1 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model update_knn.1 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess update_knn.1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: knn_vote ...
+Execute       set_default_model knn_vote 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model knn_vote 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess knn_vote 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: digitrec ...
+Execute       set_default_model digitrec 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model digitrec 
+Command       cdfg_preprocess returned 0; 0.01 sec.
+Execute       rtl_gen_preprocess digitrec 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for synthesis: update_knn update_knn.1 knn_vote digitrec
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model update_knn 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'update_knn'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 51.66 seconds; current allocated memory: 155.084 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.38 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.sched.adb -f 
+Command       db_write returned 0; 0.3 sec.
+INFO: [HLS 200-0] Finish scheduling update_knn.
+Execute       set_default_model update_knn 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model update_knn 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=update_knn
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.8 seconds; current allocated memory: 156.237 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.53 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.bind.adb -f 
+Command       db_write returned 0; 0.3 sec.
+INFO: [HLS 200-0] Finish binding update_knn.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn_1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn.1 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model update_knn.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'update_knn.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.06 seconds; current allocated memory: 156.906 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.34 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.sched.adb -f 
+Command       db_write returned 0; 0.28 sec.
+INFO: [HLS 200-0] Finish scheduling update_knn.1.
+Execute       set_default_model update_knn.1 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model update_knn.1 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=update_knn.1
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.1 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 157.867 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.5 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.bind.adb -f 
+Command       db_write returned 0; 0.29 sec.
+INFO: [HLS 200-0] Finish binding update_knn.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'knn_vote'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model knn_vote 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model knn_vote 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'knn_vote'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.93 seconds; current allocated memory: 158.262 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.18 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.sched.adb -f 
+Command       db_write returned 0; 0.14 sec.
+INFO: [HLS 200-0] Finish scheduling knn_vote.
+Execute       set_default_model knn_vote 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model knn_vote 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=knn_vote
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.07 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 158.742 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.26 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.bind.adb -f 
+Command       db_write returned 0; 0.15 sec.
+INFO: [HLS 200-0] Finish binding knn_vote.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'digitrec'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model digitrec 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model digitrec 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.67 seconds; current allocated memory: 159.780 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.49 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.sched.adb -f 
+Command       db_write returned 0; 0.45 sec.
+INFO: [HLS 200-0] Finish scheduling digitrec.
+Execute       set_default_model digitrec 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model digitrec 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=digitrec
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.63 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.6 seconds; current allocated memory: 161.636 MB.
+Execute       report -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 1.28 sec.
+Execute       db_write -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.bind.adb -f 
+Command       db_write returned 0; 0.46 sec.
+INFO: [HLS 200-0] Finish binding digitrec.
+Execute       get_model_list digitrec -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess update_knn 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess update_knn.1 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess knn_vote 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess digitrec 
+Command       rtl_gen_preprocess returned 0; 0.01 sec.
+INFO: [HLS 200-0] Model list for RTL generation: update_knn update_knn.1 knn_vote digitrec
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model update_knn -vendor xilinx -mg_file /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'digitrec_mux_42_1_1_0' to 'digitrec_mux_42_1bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'digitrec_mux_124_6_1_0' to 'digitrec_mux_124_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_124_cud': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_42_1bkb': 12 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn'.
+Command       create_rtl_model returned 0; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.88 seconds; current allocated memory: 164.088 MB.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl update_knn -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/systemc/update_knn -synmodules update_knn update_knn.1 knn_vote digitrec 
+Command       gen_rtl returned 0; 0.02 sec.
+Execute       gen_rtl update_knn -style xilinx -f -lang vhdl -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/vhdl/update_knn 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl update_knn -style xilinx -f -lang vlog -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/verilog/update_knn 
+Command       gen_rtl returned 0; 0.02 sec.
+Execute       gen_tb_info update_knn -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn -p /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db 
+Command       gen_tb_info returned 0; 0.09 sec.
+Execute       report -model update_knn -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/update_knn_csynth.rpt -f 
+Command       report returned 0; 0.1 sec.
+Execute       report -model update_knn -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/update_knn_csynth.xml -f -x 
+Command       report returned 0; 0.08 sec.
+Execute       report -model update_knn -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.verbose.rpt -verbose -f 
+Command       report returned 0; 0.62 sec.
+Execute       db_write -model update_knn -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.adb -f 
+Command       db_write returned 0; 0.44 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn_1'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model update_knn.1 -vendor xilinx -mg_file /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'digitrec_mux_42_1_1_1' to 'digitrec_mux_42_1dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'digitrec_mux_94_6_1_1' to 'digitrec_mux_94_6eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_42_1bkb': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_42_1dEe': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_94_6eOg': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn_1'.
+Command       create_rtl_model returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.59 seconds; current allocated memory: 169.880 MB.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl update_knn.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/systemc/update_knn_1 -synmodules update_knn update_knn.1 knn_vote digitrec 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl update_knn.1 -style xilinx -f -lang vhdl -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/vhdl/update_knn_1 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl update_knn.1 -style xilinx -f -lang vlog -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/verilog/update_knn_1 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_tb_info update_knn.1 -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1 -p /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db 
+Command       gen_tb_info returned 0; 0.06 sec.
+Execute       report -model update_knn.1 -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/update_knn_1_csynth.rpt -f 
+Command       report returned 0; 0.07 sec.
+Execute       report -model update_knn.1 -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/update_knn_1_csynth.xml -f -x 
+Command       report returned 0; 0.07 sec.
+Execute       report -model update_knn.1 -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.verbose.rpt -verbose -f 
+Command       report returned 0; 0.58 sec.
+Execute       db_write -model update_knn.1 -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.adb -f 
+Command       db_write returned 0; 0.46 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'knn_vote'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model knn_vote -vendor xilinx -mg_file /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'knn_vote'.
+Command       create_rtl_model returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.43 seconds; current allocated memory: 173.970 MB.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl knn_vote -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/systemc/knn_vote -synmodules update_knn update_knn.1 knn_vote digitrec 
+Command       gen_rtl returned 0; 0.02 sec.
+Execute       gen_rtl knn_vote -style xilinx -f -lang vhdl -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/vhdl/knn_vote 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl knn_vote -style xilinx -f -lang vlog -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/verilog/knn_vote 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_tb_info knn_vote -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote -p /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db 
+Command       gen_tb_info returned 0; 0.04 sec.
+Execute       report -model knn_vote -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/knn_vote_csynth.rpt -f 
+Command       report returned 0; 0.05 sec.
+Execute       report -model knn_vote -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/knn_vote_csynth.xml -f -x 
+Command       report returned 0; 0.05 sec.
+Execute       report -model knn_vote -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.verbose.rpt -verbose -f 
+Command       report returned 0; 0.31 sec.
+Execute       db_write -model knn_vote -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.adb -f 
+Command       db_write returned 0; 0.29 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'digitrec'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model digitrec -vendor xilinx -mg_file /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'digitrec/input_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'digitrec' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'digitrec_training_data_V' to 'digitrec_trainingfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'digitrec_mux_42_6_1_1' to 'digitrec_mux_42_6g8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'digitrec_mux_42_6g8j': 30 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'digitrec'.
+Command       create_rtl_model returned 0; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.99 seconds; current allocated memory: 178.474 MB.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl digitrec -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/systemc/digitrec -synmodules update_knn update_knn.1 knn_vote digitrec 
+Command       gen_rtl returned 0; 0.02 sec.
+Execute       gen_rtl digitrec -istop -style xilinx -f -lang vhdl -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/vhdl/digitrec 
+Command       gen_rtl returned 0; 0.14 sec.
+Execute       gen_rtl digitrec -istop -style xilinx -f -lang vlog -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/verilog/digitrec 
+Command       gen_rtl returned 0; 0.09 sec.
+Execute       export_constraint_db -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.constraint.tcl -f -tool general 
+Command       export_constraint_db returned 0; 0 sec.
+Execute       report -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.design.xml -verbose -f -dv 
+Command       report returned 0; 0.48 sec.
+Execute       report -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.sdaccel.xml -verbose -f -sdaccel 
+Command       report returned 0; 0.21 sec.
+Execute       gen_tb_info digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec -p /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db 
+Command       gen_tb_info returned 0; 0.02 sec.
+Execute       report -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/digitrec_csynth.rpt -f 
+Command       report returned 0; 0.07 sec.
+Execute       report -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/syn/report/digitrec_csynth.xml -f -x 
+Command       report returned 0; 0.07 sec.
+Execute       report -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.verbose.rpt -verbose -f 
+Command       report returned 0; 1.32 sec.
+Execute       db_write -model digitrec -o /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.adb -f 
+Command       db_write returned 0; 0.65 sec.
+Execute       sc_get_clocks digitrec 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       sc_get_portdomain digitrec 
+Command       sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: update_knn update_knn.1 knn_vote digitrec
+INFO: [HLS 200-0] Handling components in module [update_knn] ... 
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-0] Found component digitrec_mux_42_1bkb.
+INFO: [HLS 200-0] Append model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] Found component digitrec_mux_42_1bkb.
+INFO: [HLS 200-0] Append model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] Found component digitrec_mux_42_1bkb.
+INFO: [HLS 200-0] Append model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] Found component digitrec_mux_42_1bkb.
+INFO: [HLS 200-0] Append model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] Found component digitrec_mux_124_cud.
+INFO: [HLS 200-0] Append model digitrec_mux_124_cud
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [update_knn_1] ... 
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+INFO: [HLS 200-0] Found component digitrec_mux_42_1dEe.
+INFO: [HLS 200-0] Append model digitrec_mux_42_1dEe
+INFO: [HLS 200-0] Found component digitrec_mux_94_6eOg.
+INFO: [HLS 200-0] Append model digitrec_mux_94_6eOg
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [knn_vote] ... 
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [digitrec] ... 
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+INFO: [HLS 200-0] Found component digitrec_mux_42_6g8j.
+INFO: [HLS 200-0] Append model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] Found component digitrec_mux_42_6g8j.
+INFO: [HLS 200-0] Append model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] Found component digitrec_mux_42_6g8j.
+INFO: [HLS 200-0] Append model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] Found component digitrec_mux_42_6g8j.
+INFO: [HLS 200-0] Append model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] Found component digitrec_mux_42_6g8j.
+INFO: [HLS 200-0] Append model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] Found component digitrec_trainingfYi.
+INFO: [HLS 200-0] Append model digitrec_trainingfYi
+Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-0] Append model update_knn
+INFO: [HLS 200-0] Append model update_knn_1
+INFO: [HLS 200-0] Append model knn_vote
+INFO: [HLS 200-0] Append model digitrec
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: digitrec_mux_42_1bkb digitrec_mux_42_1bkb digitrec_mux_42_1bkb digitrec_mux_42_1bkb digitrec_mux_124_cud digitrec_mux_42_1dEe digitrec_mux_94_6eOg digitrec_mux_42_6g8j digitrec_mux_42_6g8j digitrec_mux_42_6g8j digitrec_mux_42_6g8j digitrec_mux_42_6g8j digitrec_trainingfYi update_knn update_knn_1 knn_vote digitrec
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_1bkb
+INFO: [HLS 200-0] To file: write model digitrec_mux_124_cud
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_1dEe
+INFO: [HLS 200-0] To file: write model digitrec_mux_94_6eOg
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] To file: write model digitrec_mux_42_6g8j
+INFO: [HLS 200-0] To file: write model digitrec_trainingfYi
+INFO: [HLS 200-0] To file: write model update_knn
+INFO: [HLS 200-0] To file: write model update_knn_1
+INFO: [HLS 200-0] To file: write model knn_vote
+INFO: [HLS 200-0] To file: write model digitrec
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+Execute       export_ssdm /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/a.export.ll 
+Command       export_ssdm returned 0; 0.03 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.09 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.16 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.16 sec.
+Command       ap_source returned 0; 0.16 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+Command       ap_source returned 0; 0.04 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+Command       ap_source returned 0; 0.02 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'digitrec_trainingfYi_rom' using block ROMs.
+Command       ap_source returned 0; 1.95 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.02 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.08 sec.
+Execute             source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.16 sec.
+Execute           source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.16 sec.
+Command       ap_source returned 0; 0.16 sec.
+Execute       source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/update_knn_1.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/knn_vote.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/digitrec.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       sc_get_clocks digitrec 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       source /mnt/f/dev/522r/522r_asst4/test_3-nn.prj/test_solution/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:13 ; elapsed = 00:01:11 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 7620 ; free virtual = 23007
+INFO: [SYSC 207-301] Generating SystemC RTL for digitrec.
+INFO: [VHDL 208-304] Generating VHDL RTL for digitrec.
+INFO: [VLOG 209-307] Generating Verilog RTL for digitrec.
+Command     autosyn returned 0; 19.59 sec.
+Command   csynth_design returned 0; 68.93 sec.
+Command ap_source returned 0; 70.05 sec.
+Execute cleanup_all 
+Command cleanup_all returned 0; 0.03 sec.

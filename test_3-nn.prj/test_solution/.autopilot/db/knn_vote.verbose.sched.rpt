@@ -1,0 +1,288 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_vote'
+================================================================
+* Date:           Tue Feb 20 22:55:09 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        test_3-nn.prj
+* Solution:       test_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.17|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    4|    4|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 1 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+
+* FSM state operations: 
+
+ <State 1> : 8.17ns
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%knn_set_2_2_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_2_2_V_r)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%knn_set_2_2_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_2_1_V_r)"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%knn_set_2_2_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_2_0_V_r)"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%knn_set_2_1_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_1_2_V_r)"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%knn_set_2_1_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_1_1_V_r)"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%knn_set_2_1_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_1_0_V_r)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%knn_set_2_0_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_0_2_V_r)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%knn_set_2_0_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_0_1_V_r)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%knn_set_2_0_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_2_0_0_V_r)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%knn_set_1_2_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_2_2_V_r)"
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%knn_set_1_2_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_2_1_V_r)"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%knn_set_1_2_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_2_0_V_r)"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%knn_set_1_1_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_1_2_V_r)"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%knn_set_1_1_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_1_1_V_r)"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%knn_set_1_1_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_1_0_V_r)"
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%knn_set_1_0_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_0_2_V_r)"
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%knn_set_1_0_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_0_1_V_r)"
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%knn_set_1_0_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_1_0_0_V_r)"
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%knn_set_0_2_3_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_2_3_V_r)"
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%knn_set_0_2_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_2_2_V_r)"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%knn_set_0_2_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_2_1_V_r)"
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%knn_set_0_2_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_2_0_V_r)"
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%knn_set_0_1_3_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_1_3_V_r)"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%knn_set_0_1_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_1_2_V_r)"
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%knn_set_0_1_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_1_1_V_r)"
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%knn_set_0_1_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_1_0_V_r)"
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%knn_set_0_0_3_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_0_3_V_r)"
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%knn_set_0_0_2_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_0_2_V_r)"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%knn_set_0_0_1_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_0_1_V_r)"
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%knn_set_0_0_0_V_r_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %knn_set_0_0_0_V_r)"
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i6 %knn_set_0_0_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_1_0_1_cast = zext i6 %knn_set_0_1_0_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_1_0_2_cast = zext i6 %knn_set_0_2_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 39 [1/1] (1.82ns)   --->   "%tmp30 = add i7 %tmp_1_0_2_cast, %tmp_1_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp30_cast = zext i7 %tmp30 to i8" [digitrec.cpp:123]
+ST_1 : Operation 41 [1/1] (1.87ns)   --->   "%sum_distances_0_2 = add i8 %tmp_1_0_1_cast, %tmp30_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 42 [1/1] (1.55ns)   --->   "%tmp_8 = icmp ult i8 %sum_distances_0_2, -106" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (1.37ns)   --->   "%sum_distances_1_min_s = select i1 %tmp_8, i8 %sum_distances_0_2, i8 -106" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_1_1_cast = zext i6 %knn_set_1_0_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_1_1_1_cast = zext i6 %knn_set_1_1_0_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_1_1_2_cast = zext i6 %knn_set_1_2_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 47 [1/1] (1.82ns)   --->   "%tmp31 = add i7 %tmp_1_1_2_cast, %tmp_1_1_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%tmp31_cast = zext i7 %tmp31 to i8" [digitrec.cpp:123]
+ST_1 : Operation 49 [1/1] (1.87ns)   --->   "%sum_distances_1_2 = add i8 %tmp_1_1_1_cast, %tmp31_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 50 [1/1] (1.55ns)   --->   "%tmp_8_1 = icmp ult i8 %sum_distances_1_2, %sum_distances_1_min_s" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_1_2_cast = zext i6 %knn_set_2_0_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_1_2_1_cast = zext i6 %knn_set_2_1_0_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_1_2_2_cast = zext i6 %knn_set_2_2_0_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 54 [1/1] (1.82ns)   --->   "%tmp32 = add i7 %tmp_1_2_2_cast, %tmp_1_2_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%tmp32_cast = zext i7 %tmp32 to i8" [digitrec.cpp:123]
+ST_1 : Operation 56 [1/1] (1.87ns)   --->   "%sum_distances_2_2 = add i8 %tmp_1_2_1_cast, %tmp32_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_1_3_cast = zext i6 %knn_set_0_0_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_1_3_1_cast = zext i6 %knn_set_0_1_1_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_1_3_2_cast = zext i6 %knn_set_0_2_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 60 [1/1] (1.82ns)   --->   "%tmp33 = add i7 %tmp_1_3_2_cast, %tmp_1_3_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%tmp33_cast = zext i7 %tmp33 to i8" [digitrec.cpp:123]
+ST_1 : Operation 62 [1/1] (1.87ns)   --->   "%sum_distances_3_2 = add i8 %tmp_1_3_1_cast, %tmp33_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_1_4_cast = zext i6 %knn_set_1_0_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_1_4_1_cast = zext i6 %knn_set_1_1_1_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_1_4_2_cast = zext i6 %knn_set_1_2_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 66 [1/1] (1.82ns)   --->   "%tmp34 = add i7 %tmp_1_4_2_cast, %tmp_1_4_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%tmp34_cast = zext i7 %tmp34 to i8" [digitrec.cpp:123]
+ST_1 : Operation 68 [1/1] (1.87ns)   --->   "%sum_distances_4_2 = add i8 %tmp_1_4_1_cast, %tmp34_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_1_5_cast = zext i6 %knn_set_2_0_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_1_5_1_cast = zext i6 %knn_set_2_1_1_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_1_5_2_cast = zext i6 %knn_set_2_2_1_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 72 [1/1] (1.82ns)   --->   "%tmp35 = add i7 %tmp_1_5_2_cast, %tmp_1_5_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%tmp35_cast = zext i7 %tmp35 to i8" [digitrec.cpp:123]
+ST_1 : Operation 74 [1/1] (1.87ns)   --->   "%sum_distances_5_2 = add i8 %tmp_1_5_1_cast, %tmp35_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_1_6_cast = zext i6 %knn_set_0_0_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_1_6_1_cast = zext i6 %knn_set_0_1_2_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_1_6_2_cast = zext i6 %knn_set_0_2_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 78 [1/1] (1.82ns)   --->   "%tmp36 = add i7 %tmp_1_6_2_cast, %tmp_1_6_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%tmp36_cast = zext i7 %tmp36 to i8" [digitrec.cpp:123]
+ST_1 : Operation 80 [1/1] (1.87ns)   --->   "%sum_distances_6_2 = add i8 %tmp_1_6_1_cast, %tmp36_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_1_7_cast = zext i6 %knn_set_1_0_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_1_7_1_cast = zext i6 %knn_set_1_1_2_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_1_7_2_cast = zext i6 %knn_set_1_2_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 84 [1/1] (1.82ns)   --->   "%tmp37 = add i7 %tmp_1_7_2_cast, %tmp_1_7_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%tmp37_cast = zext i7 %tmp37 to i8" [digitrec.cpp:123]
+ST_1 : Operation 86 [1/1] (1.87ns)   --->   "%sum_distances_7_2 = add i8 %tmp_1_7_1_cast, %tmp37_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_1_8_cast = zext i6 %knn_set_2_0_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_1_8_1_cast = zext i6 %knn_set_2_1_2_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_1_8_2_cast = zext i6 %knn_set_2_2_2_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 90 [1/1] (1.82ns)   --->   "%tmp38 = add i7 %tmp_1_8_2_cast, %tmp_1_8_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%tmp38_cast = zext i7 %tmp38 to i8" [digitrec.cpp:123]
+ST_1 : Operation 92 [1/1] (1.87ns)   --->   "%sum_distances_8_2 = add i8 %tmp_1_8_1_cast, %tmp38_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_1_9_cast = zext i6 %knn_set_0_0_3_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_1_9_1_cast = zext i6 %knn_set_0_1_3_V_r_1 to i8" [digitrec.cpp:123]
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_1_9_2_cast = zext i6 %knn_set_0_2_3_V_r_1 to i7" [digitrec.cpp:123]
+ST_1 : Operation 96 [1/1] (1.82ns)   --->   "%tmp39 = add i7 %tmp_1_9_2_cast, %tmp_1_9_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%tmp39_cast = zext i7 %tmp39 to i8" [digitrec.cpp:123]
+ST_1 : Operation 98 [1/1] (1.87ns)   --->   "%sum_distances_9_2 = add i8 %tmp_1_9_1_cast, %tmp39_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 7.21ns
+ST_2 : Operation 99 [1/1] (1.37ns)   --->   "%sum_distances_1_min_1 = select i1 %tmp_8_1, i8 %sum_distances_1_2, i8 %sum_distances_1_min_s" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 100 [1/1] (1.55ns)   --->   "%tmp_8_2 = icmp ult i8 %sum_distances_2_2, %sum_distances_1_min_1" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 101 [1/1] (1.37ns)   --->   "%sum_distances_1_min_2 = select i1 %tmp_8_2, i8 %sum_distances_2_2, i8 %sum_distances_1_min_1" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (1.55ns)   --->   "%tmp_8_3 = icmp ult i8 %sum_distances_3_2, %sum_distances_1_min_2" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 103 [1/1] (1.37ns)   --->   "%sum_distances_1_min_3 = select i1 %tmp_8_3, i8 %sum_distances_3_2, i8 %sum_distances_1_min_2" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp_cast = zext i1 %tmp_8_1 to i2" [digitrec.cpp:131]
+ST_2 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp_5 = select i1 %tmp_8_3, i2 -1, i2 -2" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp_6 = or i1 %tmp_8_3, %tmp_8_2" [digitrec.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (1.37ns) (out node of the LUT)   --->   "%tmp_7 = select i1 %tmp_6, i2 %tmp_5, i2 %tmp_cast" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 3> : 7.39ns
+ST_3 : Operation 108 [1/1] (1.55ns)   --->   "%tmp_8_4 = icmp ult i8 %sum_distances_4_2, %sum_distances_1_min_3" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 109 [1/1] (1.37ns)   --->   "%sum_distances_1_min_4 = select i1 %tmp_8_4, i8 %sum_distances_4_2, i8 %sum_distances_1_min_3" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 110 [1/1] (1.55ns)   --->   "%tmp_8_5 = icmp ult i8 %sum_distances_5_2, %sum_distances_1_min_4" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 111 [1/1] (1.37ns)   --->   "%sum_distances_1_min_5 = select i1 %tmp_8_5, i8 %sum_distances_5_2, i8 %sum_distances_1_min_4" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 112 [1/1] (1.55ns)   --->   "%tmp_8_6 = icmp ult i8 %sum_distances_6_2, %sum_distances_1_min_5" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp_7_cast = zext i2 %tmp_7 to i3" [digitrec.cpp:131]
+ST_3 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp_9 = select i1 %tmp_8_5, i3 -3, i3 -4" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp_s = or i1 %tmp_8_5, %tmp_8_4" [digitrec.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 116 [1/1] (1.37ns) (out node of the LUT)   --->   "%tmp_2 = select i1 %tmp_s, i3 %tmp_9, i3 %tmp_7_cast" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 4> : 7.39ns
+ST_4 : Operation 117 [1/1] (1.37ns)   --->   "%sum_distances_1_min_6 = select i1 %tmp_8_6, i8 %sum_distances_6_2, i8 %sum_distances_1_min_5" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 118 [1/1] (1.55ns)   --->   "%tmp_8_7 = icmp ult i8 %sum_distances_7_2, %sum_distances_1_min_6" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 119 [1/1] (1.37ns)   --->   "%sum_distances_1_min_7 = select i1 %tmp_8_7, i8 %sum_distances_7_2, i8 %sum_distances_1_min_6" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 120 [1/1] (1.55ns)   --->   "%tmp_8_8 = icmp ult i8 %sum_distances_8_2, %sum_distances_1_min_7" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 121 [1/1] (0.00ns) (grouped into LUT with out node tmp_8_9)   --->   "%sum_distances_1_min_8 = select i1 %tmp_8_8, i8 %sum_distances_8_2, i8 %sum_distances_1_min_7" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 122 [1/1] (1.55ns) (out node of the LUT)   --->   "%tmp_8_9 = icmp ult i8 %sum_distances_9_2, %sum_distances_1_min_8" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%tmp_3_cast_cast = select i1 %tmp_8_7, i3 -1, i3 -2" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%tmp_4 = or i1 %tmp_8_7, %tmp_8_6" [digitrec.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 125 [1/1] (1.37ns) (out node of the LUT)   --->   "%tmp_3 = select i1 %tmp_4, i3 %tmp_3_cast_cast, i3 %tmp_2" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 5> : 1.37ns
+ST_5 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [digitrec.cpp:114]
+ST_5 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node agg_result_V)   --->   "%tmp_10_cast = zext i3 %tmp_3 to i4" [digitrec.cpp:131]
+ST_5 : Operation 128 [1/1] (0.00ns) (grouped into LUT with out node agg_result_V)   --->   "%tmp_1 = select i1 %tmp_8_9, i4 -7, i4 -8" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node agg_result_V)   --->   "%tmp_10 = or i1 %tmp_8_9, %tmp_8_8" [digitrec.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 130 [1/1] (1.37ns) (out node of the LUT)   --->   "%agg_result_V = select i1 %tmp_10, i4 %tmp_1, i4 %tmp_10_cast" [digitrec.cpp:131]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 131 [1/1] (0.00ns)   --->   "ret i4 %agg_result_V" [digitrec.cpp:131]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.17ns
+The critical path consists of the following:
+	wire read on port 'knn_set_0_2_0_V_r' [52]  (0 ns)
+	'add' operation ('tmp30', digitrec.cpp:123) [65]  (1.83 ns)
+	'add' operation ('sum_distances_0_2', digitrec.cpp:123) [67]  (1.87 ns)
+	'icmp' operation ('tmp_8', digitrec.cpp:125) [68]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_s', digitrec.cpp:125) [69]  (1.37 ns)
+	'icmp' operation ('tmp_8_1', digitrec.cpp:125) [76]  (1.55 ns)
+
+ <State 2>: 7.21ns
+The critical path consists of the following:
+	'select' operation ('sum_distances_1_min_1', digitrec.cpp:125) [77]  (1.37 ns)
+	'icmp' operation ('tmp_8_2', digitrec.cpp:125) [84]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_2', digitrec.cpp:125) [85]  (1.37 ns)
+	'icmp' operation ('tmp_8_3', digitrec.cpp:125) [92]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_3', digitrec.cpp:125) [93]  (1.37 ns)
+
+ <State 3>: 7.39ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_8_4', digitrec.cpp:125) [100]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_4', digitrec.cpp:125) [101]  (1.37 ns)
+	'icmp' operation ('tmp_8_5', digitrec.cpp:125) [108]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_5', digitrec.cpp:125) [109]  (1.37 ns)
+	'icmp' operation ('tmp_8_6', digitrec.cpp:125) [116]  (1.55 ns)
+
+ <State 4>: 7.39ns
+The critical path consists of the following:
+	'select' operation ('sum_distances_1_min_6', digitrec.cpp:125) [117]  (1.37 ns)
+	'icmp' operation ('tmp_8_7', digitrec.cpp:125) [124]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_7', digitrec.cpp:125) [125]  (1.37 ns)
+	'icmp' operation ('tmp_8_8', digitrec.cpp:125) [132]  (1.55 ns)
+	'select' operation ('sum_distances_1_min_8', digitrec.cpp:125) [133]  (0 ns)
+	'icmp' operation ('tmp_8_9', digitrec.cpp:125) [140]  (1.55 ns)
+
+ <State 5>: 1.37ns
+The critical path consists of the following:
+	'select' operation ('agg_result_V', digitrec.cpp:131) [155]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

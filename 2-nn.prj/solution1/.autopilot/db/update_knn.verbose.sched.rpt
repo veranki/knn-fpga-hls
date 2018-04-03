@@ -1,0 +1,177 @@
+
+
+================================================================
+== Vivado HLS Report for 'update_knn'
+================================================================
+* Date:           Tue Feb 20 21:13:14 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        2-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.64|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   52|   52|   52|   52|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   49|   49|         1|          -|          -|    49|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (exitcond)
+	2  / (!exitcond)
+3 --> 
+	4  / true
+4 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%min_distances_V_offs = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %min_distances_V_offset)"
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%train_inst_V_read = call i48 @_ssdm_op_Read.ap_auto.i48(i48 %train_inst_V)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%test_inst_V_read = call i49 @_ssdm_op_Read.ap_auto.i49(i49 %test_inst_V)"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %min_distances_V_offs, i1 false)"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_1 = zext i5 %tmp to i64" [digitrec.cpp:89]
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_2 = or i5 %tmp, 1"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_3 = call i64 @_ssdm_op_BitConcatenate.i64.i59.i5(i59 0, i5 %tmp_2)" [digitrec.cpp:89]
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%min_distances_V_addr = getelementptr [20 x i6]* %min_distances_V, i64 0, i64 %tmp_3" [digitrec.cpp:89]
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%min_distances_V_addr_1 = getelementptr [20 x i6]* %min_distances_V, i64 0, i64 %tmp_1" [digitrec.cpp:93]
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%train_inst_V_cast = zext i48 %train_inst_V_read to i49"
+ST_1 : Operation 15 [1/1] (1.27ns)   --->   "%r_V = xor i49 %train_inst_V_cast, %test_inst_V_read" [digitrec.cpp:59]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (1.76ns)   --->   "br label %1" [digitrec.cpp:63]
+
+ <State 2> : 2.32ns
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%min_distance_last_el = phi i6 [ 0, %0 ], [ %dist_V, %2 ]"
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%bvh_d_index = phi i6 [ 0, %0 ], [ %i, %2 ]"
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%index_assign_cast1 = zext i6 %bvh_d_index to i32" [digitrec.cpp:87]
+ST_2 : Operation 20 [1/1] (1.42ns)   --->   "%exitcond = icmp eq i6 %bvh_d_index, -15" [digitrec.cpp:63]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 49, i64 49, i64 49)"
+ST_2 : Operation 22 [1/1] (1.82ns)   --->   "%i = add i6 %bvh_d_index, 1" [digitrec.cpp:63]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader.0, label %2" [digitrec.cpp:63]
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 %index_assign_cast1)" [digitrec.cpp:64]
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i1 %tmp_4 to i6" [digitrec.cpp:64]
+ST_2 : Operation 26 [1/1] (1.82ns)   --->   "%dist_V = add i6 %min_distance_last_el, %tmp_1_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "br label %1" [digitrec.cpp:63]
+ST_2 : Operation 28 [2/2] (2.32ns)   --->   "%min_distances_V_load = load i6* %min_distances_V_addr, align 1" [digitrec.cpp:89]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+
+ <State 3> : 3.75ns
+ST_3 : Operation 29 [1/2] (2.32ns)   --->   "%min_distances_V_load = load i6* %min_distances_V_addr, align 1" [digitrec.cpp:89]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_3 : Operation 30 [1/1] (1.42ns)   --->   "%tmp_6 = icmp ult i6 %min_distance_last_el, %min_distances_V_load" [digitrec.cpp:89]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "br i1 %tmp_6, label %3, label %4" [digitrec.cpp:89]
+ST_3 : Operation 32 [2/2] (2.32ns)   --->   "%min_distances_V_load_1 = load i6* %min_distances_V_addr_1, align 1" [digitrec.cpp:93]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_3 : Operation 33 [1/1] (2.32ns)   --->   "store i6 %min_distance_last_el, i6* %min_distances_V_addr, align 1" [digitrec.cpp:92]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br label %.preheader.1" [digitrec.cpp:93]
+
+ <State 4> : 4.64ns
+ST_4 : Operation 35 [1/2] (2.32ns)   --->   "%min_distances_V_load_1 = load i6* %min_distances_V_addr_1, align 1" [digitrec.cpp:93]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_4 : Operation 36 [1/1] (1.42ns)   --->   "%tmp_9 = icmp ult i6 %min_distances_V_load, %min_distances_V_load_1" [digitrec.cpp:93]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %tmp_9, label %5, label %._crit_edge.0" [digitrec.cpp:93]
+ST_4 : Operation 38 [1/1] (2.32ns)   --->   "store i6 %min_distances_V_load_1, i6* %min_distances_V_addr, align 1" [digitrec.cpp:95]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_4 : Operation 39 [1/1] (2.32ns)   --->   "store i6 %min_distances_V_load, i6* %min_distances_V_addr_1, align 1" [digitrec.cpp:96]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 20> <RAM>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "br label %._crit_edge.0" [digitrec.cpp:97]
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "br label %.preheader.1"
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "ret void" [digitrec.cpp:99]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('dist.V') with incoming values : ('dist.V', digitrec.cpp:64) [18]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('min_distances_V_load', digitrec.cpp:89) on array 'min_distances_V' [31]  (2.32 ns)
+
+ <State 3>: 3.75ns
+The critical path consists of the following:
+	'load' operation ('min_distances_V_load', digitrec.cpp:89) on array 'min_distances_V' [31]  (2.32 ns)
+	'icmp' operation ('tmp_6', digitrec.cpp:89) [32]  (1.43 ns)
+
+ <State 4>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('min_distances_V_load_1', digitrec.cpp:93) on array 'min_distances_V' [35]  (2.32 ns)
+	'store' operation (digitrec.cpp:95) of variable 'min_distances_V_load_1', digitrec.cpp:93 on array 'min_distances_V' [39]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,245 @@
+
+
+================================================================
+== Vivado HLS Report for 'digitrec'
+================================================================
+* Date:           Tue Feb 20 21:16:53 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        5-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.84|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  1191794|  1191794|  1191794|  1191794|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |       70|       70|         7|          -|          -|    10|    no    |
+        | + Loop 1.1  |        5|        5|         1|          -|          -|     5|    no    |
+        |- loop2      |  1191600|  1191600|       662|          -|          -|  1800|    no    |
+        | + loop2_1   |      660|      660|        66|          -|          -|    10|    no    |
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+	4  / (exitcond1)
+3 --> 
+	3  / (!exitcond3)
+	2  / (exitcond3)
+4 --> 
+	8  / (exitcond2)
+	5  / (!exitcond2)
+5 --> 
+	6  / (!exitcond)
+	4  / (exitcond)
+6 --> 
+	7  / true
+7 --> 
+	5  / true
+8 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4 0), !map !63"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i49 %input_V), !map !69"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @digitrec_str) nounwind"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%input_V_read = call i49 @_ssdm_op_Read.ap_auto.i49(i49 %input_V)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%knn_set_V = alloca [50 x i6], align 1" [digitrec.cpp:17]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 50> <RAM>
+ST_1 : Operation 14 [1/1] (1.76ns)   --->   "br label %.preheader18" [digitrec.cpp:21]
+
+ <State 2> : 1.83ns
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %.preheader18.preheader ], [ %i_2, %.preheader18.loopexit ]"
+ST_2 : Operation 16 [1/1] (1.30ns)   --->   "%exitcond1 = icmp eq i4 %i, -6" [digitrec.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_2 : Operation 18 [1/1] (1.73ns)   --->   "%i_2 = add i4 %i, 1" [digitrec.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader.preheader, label %.preheader17.preheader" [digitrec.cpp:21]
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_cast = zext i4 %i to i7" [digitrec.cpp:21]
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_7 = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %i, i2 0)" [digitrec.cpp:21]
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i6 %tmp_7 to i7" [digitrec.cpp:24]
+ST_2 : Operation 23 [1/1] (1.82ns)   --->   "%tmp_8 = add i7 %tmp_cast, %p_shl_cast" [digitrec.cpp:24]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (1.76ns)   --->   "br label %.preheader17" [digitrec.cpp:22]
+ST_2 : Operation 25 [1/1] (1.76ns)   --->   "br label %.preheader" [digitrec.cpp:27]
+
+ <State 3> : 4.19ns
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%k = phi i3 [ %k_1, %0 ], [ 0, %.preheader17.preheader ]"
+ST_3 : Operation 27 [1/1] (1.13ns)   --->   "%exitcond3 = icmp eq i3 %k, -3" [digitrec.cpp:22]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"
+ST_3 : Operation 29 [1/1] (1.65ns)   --->   "%k_1 = add i3 %k, 1" [digitrec.cpp:22]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader18.loopexit, label %0" [digitrec.cpp:22]
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_cast_6 = zext i3 %k to i7" [digitrec.cpp:24]
+ST_3 : Operation 32 [1/1] (1.87ns)   --->   "%tmp_9 = add i7 %tmp_8, %tmp_cast_6" [digitrec.cpp:24]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_9_cast = zext i7 %tmp_9 to i64" [digitrec.cpp:24]
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%knn_set_V_addr = getelementptr [50 x i6]* %knn_set_V, i64 0, i64 %tmp_9_cast" [digitrec.cpp:24]
+ST_3 : Operation 35 [1/1] (2.32ns)   --->   "store i6 -14, i6* %knn_set_V_addr, align 1" [digitrec.cpp:24]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 50> <RAM>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %.preheader17" [digitrec.cpp:22]
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "br label %.preheader18"
+
+ <State 4> : 1.98ns
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%i4 = phi i11 [ %i_3, %4 ], [ 0, %.preheader.preheader ]"
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%i4_cast3 = zext i11 %i4 to i15" [digitrec.cpp:27]
+ST_4 : Operation 40 [1/1] (1.88ns)   --->   "%exitcond2 = icmp eq i11 %i4, -248" [digitrec.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1800, i64 1800, i64 1800)"
+ST_4 : Operation 42 [1/1] (1.97ns)   --->   "%i_3 = add i11 %i4, 1" [digitrec.cpp:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %5, label %1" [digitrec.cpp:27]
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str) nounwind" [digitrec.cpp:27]
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([6 x i8]* @p_str)" [digitrec.cpp:27]
+ST_4 : Operation 46 [1/1] (1.76ns)   --->   "br label %2" [digitrec.cpp:29]
+ST_4 : Operation 47 [2/2] (0.00ns)   --->   "%agg_result_V1 = call fastcc i4 @knn_vote([50 x i6]* %knn_set_V)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 5> : 5.31ns
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%j = phi i4 [ 0, %1 ], [ %j_2, %3 ]"
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%phi_mul = phi i15 [ 0, %1 ], [ %next_mul, %3 ]"
+ST_5 : Operation 50 [1/1] (1.30ns)   --->   "%exitcond = icmp eq i4 %j, -6" [digitrec.cpp:29]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_5 : Operation 52 [1/1] (1.73ns)   --->   "%j_2 = add i4 %j, 1" [digitrec.cpp:29]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %4, label %3" [digitrec.cpp:29]
+ST_5 : Operation 54 [1/1] (2.05ns)   --->   "%next_mul = add i15 %phi_mul, 1800"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 55 [1/1] (2.05ns)   --->   "%tmp_5 = add i15 %i4_cast3, %phi_mul" [digitrec.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_6 = zext i15 %tmp_5 to i64" [digitrec.cpp:33]
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%training_data_V_addr = getelementptr [18000 x i48]* @training_data_V, i64 0, i64 %tmp_6" [digitrec.cpp:33]
+ST_5 : Operation 58 [2/2] (3.25ns)   --->   "%training_instance_V = load i48* %training_data_V_addr, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([6 x i8]* @p_str, i32 %tmp_1)" [digitrec.cpp:37]
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "br label %.preheader" [digitrec.cpp:27]
+
+ <State 6> : 5.08ns
+ST_6 : Operation 61 [1/2] (3.25ns)   --->   "%training_instance_V = load i48* %training_data_V_addr, align 8" [digitrec.cpp:33]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 48> <Depth = 18000> <ROM>
+ST_6 : Operation 62 [2/2] (1.82ns)   --->   "call fastcc void @update_knn(i49 %input_V_read, i48 %training_instance_V, [50 x i6]* %knn_set_V, i4 %j)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 7> : 0.00ns
+ST_7 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([8 x i8]* @p_str2) nounwind" [digitrec.cpp:29]
+ST_7 : Operation 64 [1/2] (0.00ns)   --->   "call fastcc void @update_knn(i49 %input_V_read, i48 %training_instance_V, [50 x i6]* %knn_set_V, i4 %j)" [digitrec.cpp:35]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 65 [1/1] (0.00ns)   --->   "br label %2" [digitrec.cpp:29]
+
+ <State 8> : 0.00ns
+ST_8 : Operation 66 [1/2] (0.00ns)   --->   "%agg_result_V1 = call fastcc i4 @knn_vote([50 x i6]* %knn_set_V)" [digitrec.cpp:40]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 67 [1/1] (0.00ns)   --->   "ret i4 %agg_result_V1" [digitrec.cpp:40]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', digitrec.cpp:21) [10]  (1.77 ns)
+
+ <State 2>: 1.83ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', digitrec.cpp:21) [10]  (0 ns)
+	'add' operation ('tmp_8', digitrec.cpp:24) [19]  (1.83 ns)
+
+ <State 3>: 4.19ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', digitrec.cpp:22) [22]  (0 ns)
+	'add' operation ('tmp_9', digitrec.cpp:24) [29]  (1.87 ns)
+	'getelementptr' operation ('knn_set_V_addr', digitrec.cpp:24) [31]  (0 ns)
+	'store' operation (digitrec.cpp:24) of constant 50 on array 'knn_set.V', digitrec.cpp:17 [32]  (2.32 ns)
+
+ <State 4>: 1.98ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', digitrec.cpp:27) [39]  (0 ns)
+	'add' operation ('i', digitrec.cpp:27) [43]  (1.98 ns)
+
+ <State 5>: 5.31ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [51]  (0 ns)
+	'add' operation ('tmp_5', digitrec.cpp:33) [59]  (2.06 ns)
+	'getelementptr' operation ('training_data_V_addr', digitrec.cpp:33) [61]  (0 ns)
+	'load' operation ('training_instance.V', digitrec.cpp:33) on array 'training_data_V' [62]  (3.25 ns)
+
+ <State 6>: 5.08ns
+The critical path consists of the following:
+	'load' operation ('training_instance.V', digitrec.cpp:33) on array 'training_data_V' [62]  (3.25 ns)
+	'call' operation (digitrec.cpp:35) to 'update_knn' [63]  (1.83 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

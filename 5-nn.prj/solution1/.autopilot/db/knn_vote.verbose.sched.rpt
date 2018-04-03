@@ -1,0 +1,180 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_vote'
+================================================================
+* Date:           Tue Feb 20 21:16:52 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        5-nn.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.26|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  121|  121|  121|  121|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  120|  120|        12|          -|          -|    10|    no    |
+        | + Loop 1.1  |   10|   10|         2|          -|          -|     5|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond7)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	3  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %1" [digitrec.cpp:121]
+
+ <State 2> : 1.83ns
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%min_sum_distances = phi i32 [ 250, %0 ], [ %sum_distances_1_min_s, %3 ]" [digitrec.cpp:125]
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%val_assign = phi i32 [ undef, %0 ], [ %i_0_digit_recognized, %3 ]" [digitrec.cpp:125]
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%digit_recognized = phi i4 [ 0, %0 ], [ %i, %3 ]"
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%digit_recognized_cas = zext i4 %digit_recognized to i32" [digitrec.cpp:127]
+ST_2 : Operation 10 [1/1] (1.30ns)   --->   "%exitcond7 = icmp eq i4 %digit_recognized, -6" [digitrec.cpp:121]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"
+ST_2 : Operation 12 [1/1] (1.73ns)   --->   "%i = add i4 %digit_recognized, 1" [digitrec.cpp:121]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %exitcond7, label %4, label %.preheader.preheader" [digitrec.cpp:121]
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_cast = zext i4 %digit_recognized to i7" [digitrec.cpp:121]
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%tmp = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %digit_recognized, i2 0)" [digitrec.cpp:121]
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i6 %tmp to i7" [digitrec.cpp:123]
+ST_2 : Operation 17 [1/1] (1.82ns)   --->   "%tmp_4 = add i7 %tmp_cast, %p_shl_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (1.76ns)   --->   "br label %.preheader" [digitrec.cpp:126]
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_6 = trunc i32 %val_assign to i4" [digitrec.cpp:131]
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "ret i4 %tmp_6" [digitrec.cpp:131]
+
+ <State 3> : 4.19ns
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%min_sum_distances_1 = phi i9 [ %sum_distances, %2 ], [ 0, %.preheader.preheader ]"
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%j = phi i3 [ %j_1, %2 ], [ 0, %.preheader.preheader ]"
+ST_3 : Operation 23 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %j, -3" [digitrec.cpp:122]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"
+ST_3 : Operation 25 [1/1] (1.65ns)   --->   "%j_1 = add i3 %j, 1" [digitrec.cpp:122]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [digitrec.cpp:122]
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_2_cast = zext i3 %j to i7" [digitrec.cpp:123]
+ST_3 : Operation 28 [1/1] (1.87ns)   --->   "%tmp_5 = add i7 %tmp_4, %tmp_2_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_5_cast = zext i7 %tmp_5 to i64" [digitrec.cpp:123]
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%knn_set_V_addr = getelementptr [50 x i6]* %knn_set_V, i64 0, i64 %tmp_5_cast" [digitrec.cpp:123]
+ST_3 : Operation 31 [2/2] (2.32ns)   --->   "%knn_set_V_load = load i6* %knn_set_V_addr, align 1" [digitrec.cpp:123]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 50> <RAM>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%min_sum_distances_1_s = zext i9 %min_sum_distances_1 to i32" [digitrec.cpp:126]
+ST_3 : Operation 33 [1/1] (2.47ns)   --->   "%tmp_1 = icmp slt i32 %min_sum_distances_1_s, %min_sum_distances" [digitrec.cpp:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (1.37ns)   --->   "%sum_distances_1_min_s = select i1 %tmp_1, i32 %min_sum_distances_1_s, i32 %min_sum_distances" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (1.37ns)   --->   "%i_0_digit_recognized = select i1 %tmp_1, i32 %digit_recognized_cas, i32 %val_assign" [digitrec.cpp:125]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %1" [digitrec.cpp:121]
+
+ <State 4> : 4.26ns
+ST_4 : Operation 37 [1/2] (2.32ns)   --->   "%knn_set_V_load = load i6* %knn_set_V_addr, align 1" [digitrec.cpp:123]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 50> <RAM>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i6 %knn_set_V_load to i9" [digitrec.cpp:123]
+ST_4 : Operation 39 [1/1] (1.93ns)   --->   "%sum_distances = add i9 %min_sum_distances_1, %tmp_3_cast" [digitrec.cpp:123]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "br label %.preheader" [digitrec.cpp:122]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('min_sum_distances', digitrec.cpp:125) with incoming values : ('sum_distances_1_min_s', digitrec.cpp:125) [4]  (1.77 ns)
+
+ <State 2>: 1.83ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', digitrec.cpp:121) [6]  (0 ns)
+	'add' operation ('tmp_4', digitrec.cpp:123) [16]  (1.83 ns)
+
+ <State 3>: 4.19ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', digitrec.cpp:122) [20]  (0 ns)
+	'add' operation ('tmp_5', digitrec.cpp:123) [27]  (1.87 ns)
+	'getelementptr' operation ('knn_set_V_addr', digitrec.cpp:123) [29]  (0 ns)
+	'load' operation ('knn_set_V_load', digitrec.cpp:123) on array 'knn_set_V' [30]  (2.32 ns)
+
+ <State 4>: 4.26ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load', digitrec.cpp:123) on array 'knn_set_V' [30]  (2.32 ns)
+	'add' operation ('sum_distances', digitrec.cpp:123) [32]  (1.94 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,412 @@
+
+
+================================================================
+== Vivado HLS Report for 'update_knn'
+================================================================
+* Date:           Tue Feb 20 22:55:06 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        test_3-nn.prj
+* Solution:       test_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.29|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+
+* FSM state operations: 
+
+ <State 1> : 8.29ns
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%min_distances_V_offs = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %min_distances_V_offset)"
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%min_distances_V211_r = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V211_read)"
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%min_distances_V210_r = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V210_read)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%min_distances_V29_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V29_read)"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%min_distances_V28_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V28_read)"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%min_distances_V17_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V17_read)"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%min_distances_V16_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V16_read)"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%min_distances_V15_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V15_read)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%min_distances_V14_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V14_read)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%min_distances_V3_rea = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V3_read)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%min_distances_V2_rea = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V2_read)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%min_distances_V12_re = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V12_read)"
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%min_distances_V_read_2 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %min_distances_V_read)"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%train_inst_V_read = call i48 @_ssdm_op_Read.ap_auto.i48(i48 %train_inst_V)"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%test_inst_V_read = call i49 @_ssdm_op_Read.ap_auto.i49(i49 %test_inst_V)"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%train_inst_V_cast = zext i48 %train_inst_V_read to i49"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_56 = trunc i4 %min_distances_V_offs to i2"
+ST_1 : Operation 21 [1/1] (0.95ns)   --->   "%tmp_7 = icmp ne i2 %tmp_56, -1"   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (1.27ns)   --->   "%r_V = xor i49 %train_inst_V_cast, %test_inst_V_read" [digitrec.cpp:59]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_57 = trunc i49 %r_V to i1" [digitrec.cpp:64]
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i1 %tmp_57 to i2" [digitrec.cpp:64]
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_58 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 1)" [digitrec.cpp:64]
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_1_1_cast = zext i1 %tmp_58 to i2" [digitrec.cpp:64]
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_59 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 2)" [digitrec.cpp:64]
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_1_2_cast = zext i1 %tmp_59 to i2" [digitrec.cpp:64]
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_60 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 3)" [digitrec.cpp:64]
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_1_3_cast = zext i1 %tmp_60 to i2" [digitrec.cpp:64]
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_61 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 4)" [digitrec.cpp:64]
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_1_4_cast = zext i1 %tmp_61 to i2" [digitrec.cpp:64]
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_62 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 5)" [digitrec.cpp:64]
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_1_5_cast = zext i1 %tmp_62 to i2" [digitrec.cpp:64]
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_63 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 6)" [digitrec.cpp:64]
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_1_6_cast = zext i1 %tmp_63 to i2" [digitrec.cpp:64]
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_64 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 7)" [digitrec.cpp:64]
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_1_7_cast = zext i1 %tmp_64 to i2" [digitrec.cpp:64]
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_65 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 8)" [digitrec.cpp:64]
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_1_8_cast = zext i1 %tmp_65 to i2" [digitrec.cpp:64]
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_66 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 9)" [digitrec.cpp:64]
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_1_9_cast = zext i1 %tmp_66 to i2" [digitrec.cpp:64]
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_67 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 10)" [digitrec.cpp:64]
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_1_cast_5 = zext i1 %tmp_67 to i2" [digitrec.cpp:64]
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_68 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 11)" [digitrec.cpp:64]
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_1_10_cast = zext i1 %tmp_68 to i2" [digitrec.cpp:64]
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_69 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 12)" [digitrec.cpp:64]
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_1_11_cast = zext i1 %tmp_69 to i2" [digitrec.cpp:64]
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_70 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 13)" [digitrec.cpp:64]
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_1_12_cast = zext i1 %tmp_70 to i2" [digitrec.cpp:64]
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_71 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 14)" [digitrec.cpp:64]
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_1_13_cast = zext i1 %tmp_71 to i2" [digitrec.cpp:64]
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 15)" [digitrec.cpp:64]
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_1_14_cast = zext i1 %tmp_72 to i2" [digitrec.cpp:64]
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_73 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 16)" [digitrec.cpp:64]
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_1_15_cast = zext i1 %tmp_73 to i2" [digitrec.cpp:64]
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 17)" [digitrec.cpp:64]
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_1_16_cast = zext i1 %tmp_74 to i2" [digitrec.cpp:64]
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_75 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 18)" [digitrec.cpp:64]
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_1_17_cast = zext i1 %tmp_75 to i2" [digitrec.cpp:64]
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_76 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 19)" [digitrec.cpp:64]
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_1_18_cast = zext i1 %tmp_76 to i2" [digitrec.cpp:64]
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_77 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 20)" [digitrec.cpp:64]
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_1_19_cast = zext i1 %tmp_77 to i2" [digitrec.cpp:64]
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 21)" [digitrec.cpp:64]
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_1_20_cast = zext i1 %tmp_78 to i2" [digitrec.cpp:64]
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 22)" [digitrec.cpp:64]
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_1_21_cast = zext i1 %tmp_79 to i2" [digitrec.cpp:64]
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 23)" [digitrec.cpp:64]
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_1_22_cast = zext i1 %tmp_80 to i2" [digitrec.cpp:64]
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_81 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 24)" [digitrec.cpp:64]
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_1_23_cast = zext i1 %tmp_81 to i2" [digitrec.cpp:64]
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_82 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 25)" [digitrec.cpp:64]
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_1_24_cast = zext i1 %tmp_82 to i2" [digitrec.cpp:64]
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_83 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 26)" [digitrec.cpp:64]
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_1_25_cast = zext i1 %tmp_83 to i2" [digitrec.cpp:64]
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_84 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 27)" [digitrec.cpp:64]
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%tmp_1_26_cast = zext i1 %tmp_84 to i2" [digitrec.cpp:64]
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_85 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 28)" [digitrec.cpp:64]
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_1_27_cast = zext i1 %tmp_85 to i2" [digitrec.cpp:64]
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_86 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 29)" [digitrec.cpp:64]
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_1_28_cast = zext i1 %tmp_86 to i2" [digitrec.cpp:64]
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_87 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 30)" [digitrec.cpp:64]
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_1_29_cast = zext i1 %tmp_87 to i2" [digitrec.cpp:64]
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_88 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 31)" [digitrec.cpp:64]
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_1_30_cast = zext i1 %tmp_88 to i2" [digitrec.cpp:64]
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_89 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 32)" [digitrec.cpp:64]
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_1_31_cast = zext i1 %tmp_89 to i2" [digitrec.cpp:64]
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_90 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 33)" [digitrec.cpp:64]
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_1_32_cast = zext i1 %tmp_90 to i2" [digitrec.cpp:64]
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_91 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 34)" [digitrec.cpp:64]
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_1_33_cast = zext i1 %tmp_91 to i2" [digitrec.cpp:64]
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 35)" [digitrec.cpp:64]
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_1_34_cast = zext i1 %tmp_92 to i2" [digitrec.cpp:64]
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_93 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 36)" [digitrec.cpp:64]
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_1_35_cast = zext i1 %tmp_93 to i2" [digitrec.cpp:64]
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_94 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 37)" [digitrec.cpp:64]
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_1_36_cast = zext i1 %tmp_94 to i2" [digitrec.cpp:64]
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_95 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 38)" [digitrec.cpp:64]
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_1_37_cast = zext i1 %tmp_95 to i2" [digitrec.cpp:64]
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_96 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 39)" [digitrec.cpp:64]
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_1_38_cast = zext i1 %tmp_96 to i2" [digitrec.cpp:64]
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_97 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 40)" [digitrec.cpp:64]
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_1_39_cast = zext i1 %tmp_97 to i2" [digitrec.cpp:64]
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_98 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 41)" [digitrec.cpp:64]
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_1_40_cast = zext i1 %tmp_98 to i2" [digitrec.cpp:64]
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_99 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 42)" [digitrec.cpp:64]
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_1_41_cast = zext i1 %tmp_99 to i2" [digitrec.cpp:64]
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%tmp_100 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 43)" [digitrec.cpp:64]
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_1_42_cast = zext i1 %tmp_100 to i2" [digitrec.cpp:64]
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_101 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 44)" [digitrec.cpp:64]
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_1_43_cast = zext i1 %tmp_101 to i2" [digitrec.cpp:64]
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_102 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 45)" [digitrec.cpp:64]
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_1_44_cast = zext i1 %tmp_102 to i2" [digitrec.cpp:64]
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_103 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 46)" [digitrec.cpp:64]
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_1_45_cast = zext i1 %tmp_103 to i2" [digitrec.cpp:64]
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_104 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 47)" [digitrec.cpp:64]
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_1_46_cast = zext i1 %tmp_104 to i2" [digitrec.cpp:64]
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_105 = call i1 @_ssdm_op_BitSelect.i1.i49.i32(i49 %r_V, i32 48)" [digitrec.cpp:64]
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_1_47_cast = zext i1 %tmp_105 to i2" [digitrec.cpp:64]
+ST_1 : Operation 121 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp48 = add i2 %tmp_1_46_cast, %tmp_1_44_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 122 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp49 = add i2 %tmp48, %tmp_1_45_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%tmp54_cast = zext i2 %tmp49 to i3" [digitrec.cpp:64]
+ST_1 : Operation 124 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp50 = add i2 %tmp_1_43_cast, %tmp_1_42_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 125 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp54 = add i2 %tmp50, %tmp_1_41_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%tmp56_cast = zext i2 %tmp54 to i3" [digitrec.cpp:64]
+ST_1 : Operation 127 [1/1] (1.56ns)   --->   "%tmp53 = add i3 %tmp56_cast, %tmp54_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%tmp53_cast = zext i3 %tmp53 to i4" [digitrec.cpp:64]
+ST_1 : Operation 129 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp55 = add i2 %tmp_1_37_cast, %tmp_1_36_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 130 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp56 = add i2 %tmp55, %tmp_1_35_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%tmp59_cast = zext i2 %tmp56 to i3" [digitrec.cpp:64]
+ST_1 : Operation 132 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp57 = add i2 %tmp_1_40_cast, %tmp_1_39_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 133 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp59 = add i2 %tmp57, %tmp_1_38_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%tmp61_cast = zext i2 %tmp59 to i3" [digitrec.cpp:64]
+ST_1 : Operation 135 [1/1] (1.56ns)   --->   "%tmp58 = add i3 %tmp61_cast, %tmp59_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%tmp58_cast = zext i3 %tmp58 to i4" [digitrec.cpp:64]
+ST_1 : Operation 137 [1/1] (1.65ns)   --->   "%tmp52 = add i4 %tmp58_cast, %tmp53_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%tmp52_cast = zext i4 %tmp52 to i5" [digitrec.cpp:64]
+ST_1 : Operation 139 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp60 = add i2 %tmp_1_25_cast, %tmp_1_24_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 140 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp61 = add i2 %tmp60, %tmp_1_23_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%tmp65_cast = zext i2 %tmp61 to i3" [digitrec.cpp:64]
+ST_1 : Operation 142 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp62 = add i2 %tmp_1_28_cast, %tmp_1_27_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 143 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp65 = add i2 %tmp62, %tmp_1_26_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 144 [1/1] (0.00ns)   --->   "%tmp67_cast = zext i2 %tmp65 to i3" [digitrec.cpp:64]
+ST_1 : Operation 145 [1/1] (1.56ns)   --->   "%tmp64 = add i3 %tmp67_cast, %tmp65_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%tmp64_cast = zext i3 %tmp64 to i4" [digitrec.cpp:64]
+ST_1 : Operation 147 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp66 = add i2 %tmp_1_31_cast, %tmp_1_30_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 148 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp67 = add i2 %tmp66, %tmp_1_29_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%tmp70_cast = zext i2 %tmp67 to i3" [digitrec.cpp:64]
+ST_1 : Operation 150 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp68 = add i2 %tmp_1_34_cast, %tmp_1_33_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 151 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp70 = add i2 %tmp68, %tmp_1_32_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%tmp72_cast = zext i2 %tmp70 to i3" [digitrec.cpp:64]
+ST_1 : Operation 153 [1/1] (1.56ns)   --->   "%tmp69 = add i3 %tmp72_cast, %tmp70_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%tmp69_cast = zext i3 %tmp69 to i4" [digitrec.cpp:64]
+ST_1 : Operation 155 [1/1] (1.65ns)   --->   "%tmp63 = add i4 %tmp69_cast, %tmp64_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%tmp63_cast = zext i4 %tmp63 to i5" [digitrec.cpp:64]
+ST_1 : Operation 157 [1/1] (1.73ns)   --->   "%tmp51 = add i5 %tmp63_cast, %tmp52_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 158 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp71 = add i2 %tmp_1_2_cast, %tmp_1_1_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 159 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp72 = add i2 %tmp71, %tmp_1_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%tmp77_cast = zext i2 %tmp72 to i3" [digitrec.cpp:64]
+ST_1 : Operation 161 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp73 = add i2 %tmp_1_5_cast, %tmp_1_4_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 162 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp77 = add i2 %tmp73, %tmp_1_3_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%tmp79_cast = zext i2 %tmp77 to i3" [digitrec.cpp:64]
+ST_1 : Operation 164 [1/1] (1.56ns)   --->   "%tmp76 = add i3 %tmp79_cast, %tmp77_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 165 [1/1] (0.00ns)   --->   "%tmp76_cast = zext i3 %tmp76 to i4" [digitrec.cpp:64]
+ST_1 : Operation 166 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp78 = add i2 %tmp_1_8_cast, %tmp_1_7_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 167 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp79 = add i2 %tmp78, %tmp_1_6_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 168 [1/1] (0.00ns)   --->   "%tmp82_cast = zext i2 %tmp79 to i3" [digitrec.cpp:64]
+ST_1 : Operation 169 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp80 = add i2 %tmp_1_10_cast, %tmp_1_cast_5" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 170 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp82 = add i2 %tmp80, %tmp_1_9_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%tmp84_cast = zext i2 %tmp82 to i3" [digitrec.cpp:64]
+ST_1 : Operation 172 [1/1] (1.56ns)   --->   "%tmp81 = add i3 %tmp84_cast, %tmp82_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 173 [1/1] (0.00ns)   --->   "%tmp81_cast = zext i3 %tmp81 to i4" [digitrec.cpp:64]
+ST_1 : Operation 174 [1/1] (1.65ns)   --->   "%tmp75 = add i4 %tmp81_cast, %tmp76_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 175 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp83 = add i2 %tmp_1_13_cast, %tmp_1_12_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 176 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp84 = add i2 %tmp83, %tmp_1_11_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%tmp88_cast = zext i2 %tmp84 to i3" [digitrec.cpp:64]
+ST_1 : Operation 178 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp85 = add i2 %tmp_1_16_cast, %tmp_1_15_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 179 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp88 = add i2 %tmp85, %tmp_1_14_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 180 [1/1] (0.00ns)   --->   "%tmp90_cast = zext i2 %tmp88 to i3" [digitrec.cpp:64]
+ST_1 : Operation 181 [1/1] (1.56ns)   --->   "%tmp87 = add i3 %tmp90_cast, %tmp88_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 182 [1/1] (0.00ns)   --->   "%tmp87_cast = zext i3 %tmp87 to i4" [digitrec.cpp:64]
+ST_1 : Operation 183 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp89 = add i2 %tmp_1_19_cast, %tmp_1_18_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 184 [1/1] (2.07ns) (root node of TernaryAdder)   --->   "%tmp90 = add i2 %tmp89, %tmp_1_17_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 185 [1/1] (0.00ns)   --->   "%tmp93_cast = zext i2 %tmp90 to i3" [digitrec.cpp:64]
+ST_1 : Operation 186 [1/1] (1.56ns)   --->   "%tmp91 = add i2 %tmp_1_20_cast, %tmp_1_22_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 187 [1/1] (0.00ns)   --->   "%tmp96_cast = zext i2 %tmp91 to i3" [digitrec.cpp:64]
+ST_1 : Operation 188 [1/1] (1.56ns)   --->   "%tmp93 = add i2 %tmp_1_21_cast, %tmp_1_47_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 189 [1/1] (0.00ns)   --->   "%tmp97_cast = zext i2 %tmp93 to i3" [digitrec.cpp:64]
+ST_1 : Operation 190 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp94 = add i3 %tmp97_cast, %tmp96_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 191 [1/1] (2.69ns) (root node of TernaryAdder)   --->   "%tmp92 = add i3 %tmp94, %tmp93_cast" [digitrec.cpp:64]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 192 [1/1] (0.00ns)   --->   "%tmp92_cast = zext i3 %tmp92 to i4" [digitrec.cpp:64]
+ST_1 : Operation 193 [1/1] (1.65ns)   --->   "%tmp86 = add i4 %tmp92_cast, %tmp87_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 7.44ns
+ST_2 : Operation 194 [1/1] (1.37ns)   --->   "%newIndex_cast = select i1 %tmp_7, i2 0, i2 1"   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 195 [1/1] (0.00ns)   --->   "%tmp51_cast = zext i5 %tmp51 to i6" [digitrec.cpp:64]
+ST_2 : Operation 196 [1/1] (0.00ns)   --->   "%tmp75_cast = zext i4 %tmp75 to i5" [digitrec.cpp:64]
+ST_2 : Operation 197 [1/1] (0.00ns)   --->   "%tmp86_cast = zext i4 %tmp86 to i5" [digitrec.cpp:64]
+ST_2 : Operation 198 [1/1] (1.73ns)   --->   "%tmp74 = add i5 %tmp86_cast, %tmp75_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 199 [1/1] (0.00ns)   --->   "%tmp74_cast = zext i5 %tmp74 to i6" [digitrec.cpp:64]
+ST_2 : Operation 200 [1/1] (1.78ns)   --->   "%min_distances_V3 = add i6 %tmp74_cast, %tmp51_cast" [digitrec.cpp:64]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 201 [1/1] (1.37ns)   --->   "%tmp_cast = select i1 %tmp_7, i4 0, i4 1"   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 202 [1/1] (2.78ns)   --->   "%tmp_8 = call i6 @_ssdm_op_Mux.ap_auto.12i6.i4(i6 %min_distances_V_read_2, i6 %min_distances_V12_re, i6 %min_distances_V2_rea, i6 %min_distances_V3_rea, i6 %min_distances_V14_re, i6 %min_distances_V15_re, i6 %min_distances_V16_re, i6 %min_distances_V17_re, i6 %min_distances_V28_re, i6 %min_distances_V29_re, i6 %min_distances_V210_r, i6 %min_distances_V211_r, i4 %tmp_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 203 [1/1] (1.42ns)   --->   "%tmp = icmp ult i6 %min_distances_V3, %tmp_8" [digitrec.cpp:72]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 204 [1/1] (1.37ns)   --->   "%tmp_15_cast_cast = select i1 %tmp_7, i4 4, i4 5"   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 205 [1/1] (2.78ns)   --->   "%tmp_9 = call i6 @_ssdm_op_Mux.ap_auto.12i6.i4(i6 %min_distances_V_read_2, i6 %min_distances_V12_re, i6 %min_distances_V2_rea, i6 %min_distances_V3_rea, i6 %min_distances_V14_re, i6 %min_distances_V15_re, i6 %min_distances_V16_re, i6 %min_distances_V17_re, i6 %min_distances_V28_re, i6 %min_distances_V29_re, i6 %min_distances_V210_r, i6 %min_distances_V211_r, i4 %tmp_15_cast_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 206 [1/1] (0.00ns)   --->   "br i1 %tmp, label %branch3, label %0" [digitrec.cpp:72]
+ST_2 : Operation 207 [1/1] (1.42ns)   --->   "%tmp_5 = icmp ult i6 %min_distances_V3, %tmp_9" [digitrec.cpp:76]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 208 [1/1] (0.00ns)   --->   "br i1 %tmp_5, label %branch2, label %branch1" [digitrec.cpp:76]
+ST_2 : Operation 209 [1/1] (1.37ns)   --->   "%tmp_1 = select i1 %tmp_7, i4 -8, i4 -7"   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 210 [1/1] (2.78ns)   --->   "%tmp_s = call i6 @_ssdm_op_Mux.ap_auto.12i6.i4(i6 %min_distances_V_read_2, i6 %min_distances_V12_re, i6 %min_distances_V2_rea, i6 %min_distances_V3_rea, i6 %min_distances_V14_re, i6 %min_distances_V15_re, i6 %min_distances_V16_re, i6 %min_distances_V17_re, i6 %min_distances_V28_re, i6 %min_distances_V29_re, i6 %min_distances_V210_r, i6 %min_distances_V211_r, i4 %tmp_1)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 211 [1/1] (1.42ns)   --->   "%tmp_6 = icmp ult i6 %min_distances_V3, %tmp_s" [digitrec.cpp:79]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 212 [1/1] (1.86ns)   --->   "br i1 %tmp_6, label %branch28, label %._crit_edge" [digitrec.cpp:79]
+ST_2 : Operation 213 [1/1] (1.95ns)   --->   "%write_flag40_5 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 214 [1/1] (1.95ns)   --->   "%write_flag36_5 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 215 [1/1] (1.95ns)   --->   "%write_flag31_5 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 216 [1/1] (1.95ns)   --->   "%write_flag27_5 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 217 [1/1] (1.86ns)   --->   "br label %._crit_edge" [digitrec.cpp:81]
+ST_2 : Operation 218 [1/1] (1.95ns)   --->   "%write_flag40_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 219 [1/1] (1.95ns)   --->   "%write_flag36_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 220 [1/1] (1.95ns)   --->   "%write_flag31_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 221 [1/1] (1.95ns)   --->   "%write_flag27_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 222 [1/1] (1.95ns)   --->   "%write_flag24_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 223 [1/1] (1.95ns)   --->   "%write_flag21_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 224 [1/1] (1.95ns)   --->   "%write_flag18_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 225 [1/1] (1.95ns)   --->   "%write_flag15_1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 226 [1/1] (1.86ns)   --->   "br label %._crit_edge" [digitrec.cpp:79]
+ST_2 : Operation 227 [1/1] (1.95ns)   --->   "%write_flag9 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 228 [1/1] (1.95ns)   --->   "%write_flag1 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 229 [1/1] (1.95ns)   --->   "%write_flag2 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 230 [1/1] (1.95ns)   --->   "%write_flag3 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 231 [1/1] (1.95ns)   --->   "%write_flag5 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 232 [1/1] (1.95ns)   --->   "%write_flag6 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 233 [1/1] (1.95ns)   --->   "%write_flag7 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 234 [1/1] (1.95ns)   --->   "%write_flag10 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 235 [1/1] (0.00ns) (grouped into LUT with out node phitmp)   --->   "%write_flag = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 true, i1 false, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 236 [1/1] (0.00ns) (grouped into LUT with out node phitmp4)   --->   "%write_flag4 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 true, i1 false, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 237 [1/1] (0.00ns) (grouped into LUT with out node phitmp5)   --->   "%write_flag8 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 true, i1 false, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 238 [1/1] (0.00ns) (grouped into LUT with out node phitmp6)   --->   "%write_flag11 = call i1 @_ssdm_op_Mux.ap_auto.4i1.i2(i1 false, i1 false, i1 false, i1 true, i2 %newIndex_cast)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 239 [1/1] (1.95ns) (out node of the LUT)   --->   "%phitmp = select i1 %write_flag, i6 %min_distances_V3, i6 %min_distances_V_read_2" [digitrec.cpp:76]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 240 [1/1] (1.95ns) (out node of the LUT)   --->   "%phitmp4 = select i1 %write_flag4, i6 %min_distances_V3, i6 %min_distances_V12_re" [digitrec.cpp:76]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 241 [1/1] (1.95ns) (out node of the LUT)   --->   "%phitmp5 = select i1 %write_flag8, i6 %min_distances_V3, i6 %min_distances_V2_rea" [digitrec.cpp:76]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 242 [1/1] (1.95ns) (out node of the LUT)   --->   "%phitmp6 = select i1 %write_flag11, i6 %min_distances_V3, i6 %min_distances_V3_rea" [digitrec.cpp:76]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 243 [1/1] (1.86ns)   --->   "br label %._crit_edge" [digitrec.cpp:76]
+
+ <State 3> : 1.37ns
+ST_3 : Operation 244 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [digitrec.cpp:57]
+ST_3 : Operation 245 [1/1] (0.00ns) (grouped into LUT with out node mrv_sel)   --->   "%write_flag15_3 = phi i1 [ %write_flag10, %branch3 ], [ %write_flag15_1, %branch2 ], [ false, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 246 [1/1] (0.00ns)   --->   "%min_distances_V14_3 = phi i6 [ %tmp_8, %branch3 ], [ %min_distances_V3, %branch2 ], [ %min_distances_V3, %branch28 ], [ %min_distances_V3, %branch1 ]" [digitrec.cpp:64]
+ST_3 : Operation 247 [1/1] (0.00ns) (grouped into LUT with out node mrv_sel6)   --->   "%write_flag18_3 = phi i1 [ %write_flag7, %branch3 ], [ %write_flag18_1, %branch2 ], [ false, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 248 [1/1] (0.00ns)   --->   "%write_flag12_1 = phi i6 [ %phitmp6, %branch3 ], [ %min_distances_V3_rea, %branch2 ], [ %min_distances_V3_rea, %branch28 ], [ %min_distances_V3_rea, %branch1 ]" [digitrec.cpp:99]
+ST_3 : Operation 249 [1/1] (0.00ns) (grouped into LUT with out node mrv_sel7)   --->   "%write_flag21_3 = phi i1 [ %write_flag6, %branch3 ], [ %write_flag21_1, %branch2 ], [ false, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 250 [1/1] (0.00ns) (grouped into LUT with out node mrv_sel8)   --->   "%write_flag24_3 = phi i1 [ %write_flag5, %branch3 ], [ %write_flag24_1, %branch2 ], [ false, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 251 [1/1] (0.00ns)   --->   "%write_flag8_1 = phi i6 [ %phitmp5, %branch3 ], [ %min_distances_V2_rea, %branch2 ], [ %min_distances_V2_rea, %branch28 ], [ %min_distances_V2_rea, %branch1 ]" [digitrec.cpp:99]
+ST_3 : Operation 252 [1/1] (0.00ns)   --->   "%write_flag27_4 = phi i1 [ %write_flag3, %branch3 ], [ %write_flag27_1, %branch2 ], [ %write_flag27_5, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 253 [1/1] (0.00ns)   --->   "%min_distances_V28_4 = phi i6 [ %tmp_9, %branch3 ], [ %tmp_9, %branch2 ], [ %min_distances_V3, %branch28 ], [ %min_distances_V3, %branch1 ]" [digitrec.cpp:64]
+ST_3 : Operation 254 [1/1] (0.00ns)   --->   "%write_flag31_4 = phi i1 [ %write_flag2, %branch3 ], [ %write_flag31_1, %branch2 ], [ %write_flag31_5, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 255 [1/1] (0.00ns)   --->   "%write_flag4_1 = phi i6 [ %phitmp4, %branch3 ], [ %min_distances_V12_re, %branch2 ], [ %min_distances_V12_re, %branch28 ], [ %min_distances_V12_re, %branch1 ]" [digitrec.cpp:99]
+ST_3 : Operation 256 [1/1] (0.00ns)   --->   "%write_flag36_4 = phi i1 [ %write_flag1, %branch3 ], [ %write_flag36_1, %branch2 ], [ %write_flag36_5, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 257 [1/1] (0.00ns)   --->   "%write_flag40_4 = phi i1 [ %write_flag9, %branch3 ], [ %write_flag40_1, %branch2 ], [ %write_flag40_5, %branch28 ], [ false, %branch1 ]"
+ST_3 : Operation 258 [1/1] (0.00ns)   --->   "%write_flag_1 = phi i6 [ %phitmp, %branch3 ], [ %min_distances_V_read_2, %branch2 ], [ %min_distances_V_read_2, %branch28 ], [ %min_distances_V_read_2, %branch1 ]" [digitrec.cpp:99]
+ST_3 : Operation 259 [1/1] (1.37ns) (out node of the LUT)   --->   "%mrv_sel = select i1 %write_flag15_3, i6 %min_distances_V14_3, i6 %min_distances_V14_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 260 [1/1] (1.37ns) (out node of the LUT)   --->   "%mrv_sel6 = select i1 %write_flag18_3, i6 %min_distances_V14_3, i6 %min_distances_V15_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 261 [1/1] (1.37ns) (out node of the LUT)   --->   "%mrv_sel7 = select i1 %write_flag21_3, i6 %min_distances_V14_3, i6 %min_distances_V16_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 262 [1/1] (1.37ns) (out node of the LUT)   --->   "%mrv_sel8 = select i1 %write_flag24_3, i6 %min_distances_V14_3, i6 %min_distances_V17_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 263 [1/1] (1.37ns)   --->   "%mrv_sel9 = select i1 %write_flag27_4, i6 %min_distances_V28_4, i6 %min_distances_V28_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 264 [1/1] (1.37ns)   --->   "%mrv_sel1 = select i1 %write_flag31_4, i6 %min_distances_V28_4, i6 %min_distances_V29_re" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 265 [1/1] (1.37ns)   --->   "%mrv_sel2 = select i1 %write_flag36_4, i6 %min_distances_V28_4, i6 %min_distances_V210_r" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 266 [1/1] (1.37ns)   --->   "%mrv_sel3 = select i1 %write_flag40_4, i6 %min_distances_V28_4, i6 %min_distances_V211_r" [digitrec.cpp:99]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 267 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } undef, i6 %write_flag_1, 0" [digitrec.cpp:99]
+ST_3 : Operation 268 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv, i6 %write_flag4_1, 1" [digitrec.cpp:99]
+ST_3 : Operation 269 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_1, i6 %write_flag8_1, 2" [digitrec.cpp:99]
+ST_3 : Operation 270 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_2, i6 %write_flag12_1, 3" [digitrec.cpp:99]
+ST_3 : Operation 271 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_3, i6 %mrv_sel, 4" [digitrec.cpp:99]
+ST_3 : Operation 272 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_4, i6 %mrv_sel6, 5" [digitrec.cpp:99]
+ST_3 : Operation 273 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_5, i6 %mrv_sel7, 6" [digitrec.cpp:99]
+ST_3 : Operation 274 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_6, i6 %mrv_sel8, 7" [digitrec.cpp:99]
+ST_3 : Operation 275 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_7, i6 %mrv_sel9, 8" [digitrec.cpp:99]
+ST_3 : Operation 276 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_8, i6 %mrv_sel1, 9" [digitrec.cpp:99]
+ST_3 : Operation 277 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_9, i6 %mrv_sel2, 10" [digitrec.cpp:99]
+ST_3 : Operation 278 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_s, i6 %mrv_sel3, 11" [digitrec.cpp:99]
+ST_3 : Operation 279 [1/1] (0.00ns)   --->   "ret { i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6, i6 } %mrv_10" [digitrec.cpp:99]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.29ns
+The critical path consists of the following:
+	wire read on port 'train_inst_V' [29]  (0 ns)
+	'xor' operation ('r.V', digitrec.cpp:59) [36]  (1.27 ns)
+	'add' operation ('tmp48', digitrec.cpp:64) [135]  (0 ns)
+	'add' operation ('tmp49', digitrec.cpp:64) [136]  (2.07 ns)
+	'add' operation ('tmp53', digitrec.cpp:64) [141]  (1.56 ns)
+	'add' operation ('tmp52', digitrec.cpp:64) [151]  (1.65 ns)
+	'add' operation ('tmp51', digitrec.cpp:64) [171]  (1.74 ns)
+
+ <State 2>: 7.44ns
+The critical path consists of the following:
+	'select' operation ('tmp_1') [224]  (1.37 ns)
+	'mux' operation ('tmp_s') [225]  (2.78 ns)
+	'icmp' operation ('tmp_6', digitrec.cpp:79) [226]  (1.43 ns)
+	multiplexor before 'phi' operation ('write_flag15_3') with incoming values : ('write_flag15_1') ('write_flag10') [263]  (1.86 ns)
+
+ <State 3>: 1.37ns
+The critical path consists of the following:
+	'phi' operation ('write_flag15_3') with incoming values : ('write_flag15_1') ('write_flag10') [263]  (0 ns)
+	'select' operation ('mrv_sel', digitrec.cpp:99) [277]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
